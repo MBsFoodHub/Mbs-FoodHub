@@ -3,37 +3,45 @@
 <head>
     <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB's Food Hub</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header with logo and navigation -->
     <header>
-
-        
-        <div class="logo">
-            <h1>MB's Food Hub</h1>
+        <div class="header-content" id="header">
+            <div class="logo">
+                <img src="Pics/Logo.jpg" alt="Logo" class="logo-image">
+                <h1>MB's Food Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#menu">Cuisine</a></li>
+                    <li><a href="#delivery">Delivery</a></li>
+                    <li><a href="#promos">Promos</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#footer">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Cuisine</a></li>
-                <li><a href="#">Delivery</a></li>
-                <li><a href="#">Promos</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
     </header>
+    
+    <!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
+    ↑
+</button>
 
     <!-- Hero Section with two image boxes -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-container">
             <div class="left-image-box">
-                <img src="Foods/401561861_331399962837228_4688801543065575241_n.jpg" alt="Image 1">
+                <img src="Foods/401561861_331399962837228_4688801543065575241_n.jpg" alt="Shop Image">
             </div>
             <div class="right-section">
                 <div class="right-image-box">
-                    <img src="Foods/404139445_327220596588498_1442696908660396405_n.jpg" alt="Image 2">
+                    <img src="Foods/404139445_327220596588498_1442696908660396405_n.jpg" alt="Pares">
                 </div>
                 <div class="hero-content">
                     <h1>MB's Food Hub</h1>
@@ -44,28 +52,32 @@
     </section>
 
     <!-- Menu Section -->
-    <section class="menu">
+    <section class="menu" id="menu">
         <div class="menu-container">
-            <h2>Our Cuisine</h2>
+            <h2>Catalogue</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="Energy-Conservation.jpg" alt="Dish 1">
-                    <p>Dish 1</p>
+                    <img src="Foods/404139445_327220596588498_1442696908660396405_n.jpg" alt="Pares Mami">
+                    <p>Pares Mami</p>
+                    <p>₱55</p>
                     <button class="order-btn">Order</button>
                 </div>
                 <div class="menu-item">
-                    <img src="dish2.jpg" alt="Dish 2">
-                    <p>Dish 2</p>
+                    <img src="Foods/Pareswithegg.jpg" alt="Pareswithegg">
+                    <p>Pares with Egg & Unli Rice</p>
+                    <p>₱89</p>
                     <button class="order-btn">Order</button>
                 </div>
                 <div class="menu-item">
-                    <img src="dish3.jpg" alt="Dish 3">
-                    <p>Dish 3</p>
+                    <img src="Foods/Pork Sisig.jpg" alt="Pork Sisig">
+                    <p>Pork Sisig</p>
+                    <p>₱89</p>
                     <button class="order-btn">Order</button>
                 </div>
                 <div class="menu-item">
-                    <img src="dish4.jpg" alt="Dish 4">
-                    <p>Dish 4</p>
+                    <img src="Foods/Pork SisigwithRiceandEgg.jpg" alt="SisigwithRiceandEgg">
+                    <p>Pork Sisig with Rice & Egg</p>
+                    <p>₱89</p>
                     <button class="order-btn">Order</button>
                 </div>
             </div>
@@ -73,31 +85,186 @@
     </section>
     
 
-    <section class="promos">
-        <div class="promo-container">
-            <h2>Promos</h2>
-            <div class="promo-grid">
-                <a href="#" class="promo-item">
-                    <img src="Energy-Conservation.jpg" alt="Promo 1">
-                    <p>Promo 1</p>
-                </a>
-                <a href="#" class="promo-item">
-                    <img src="promo2.jpg" alt="Promo 2">
-                    <p>Promo 2</p>
-                </a>
-                <a href="#" class="promo-item">
-                    <img src="promo3.jpg" alt="Promo 3">
-                    <p>Promo 3</p>
-                </a>
-                <a href="#" class="promo-item">
-                    <img src="promo4.jpg" alt="Promo 4">
-                    <p>Promo 4</p>
-                </a>
-            </div>
+    <!-- Promo grid -->
+<section class="promos" id="promos">
+    <div class="promo-container">
+        <h2>Promos</h2>
+        <div class="promo-grid">
+            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/Promo.jpg')">
+                <img src="Foods/Promo.jpg" alt="Promo 1">
+                <p>Sinadya Promo!</p>
+            </a>
+            <!--<a href="#promos" class="promo-item" onclick="openLightbox('promo2.jpg')">
+                <img src="promo2.jpg" alt="Promo 2">
+                <p>Promo 2</p>
+            </a>
+            <a href="#promos" class="promo-item" onclick="openLightbox('promo3.jpg')">
+                <img src="promo3.jpg" alt="Promo 3">
+                <p>Promo 3</p>
+            </a>-->
+            <a href="#promos" class="promo-item" onclick="openLightbox('promo4.jpg')">
+                <img src="promo4.jpg" alt="Promo 4">
+                <p>Promo 4</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox for fullscreen images -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-image" src="" alt="Fullscreen Image">
+</div>
+
+    <!-- More content can go here -->
+
+    <section class="about-hero" id="about">
+        <h2>About Us</h2>
+        <p>Discover the story behind MB's Food Hub</p>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="about-text">
+            <h3>Our Story</h3>
+            <p>MB's Food Hub began as a small neighborhood kitchen with a big dream – to bring delicious, affordable, and wholesome meals to our community. Over the years, we’ve grown into a hub of flavor, known for our commitment to quality, authenticity, and customer satisfaction.</p>
+            <h3>Our Mission</h3>
+            <p>We aim to provide a welcoming space where people can enjoy great food made from fresh ingredients. At MB's Food Hub, we’re passionate about bringing you the best of both local and international flavors.</p>
         </div>
     </section>
 
-    <!-- More content can go here -->
+
+<!-- Delivery Section -->
+<section class="delivery" id="delivery">
+    <div class="delivery-container">
+        <h2>Delivery Information</h2>
+        
+        <!-- Delivery Area and Timing -->
+        <div class="delivery-info">
+            <h3>Delivery Areas and Hours</h3>
+            <p>We deliver to various locations in Roxas City. Orders can be placed within the following times:</p>
+            <ul>
+                <li><strong>Delivery Hours:</strong> 10:00 AM - 10:00 PM</li>
+                <li><strong>Delivery Fee:</strong> ₱30 within Roxas City</li>
+            </ul>
+        </div>
+        
+        <!-- Order Tracking -->
+        <div class="order-tracking">
+            <h3>Order Tracking</h3>
+            <p>Track your order in real-time. Enter your order number below:</p>
+            <input type="text" placeholder="Enter Order Number">
+            <button class="track-order-btn">Track Order</button>
+        </div>
+        
+        <!-- Special Instructions -->
+        <div class="delivery-instructions">
+            <h3>Special Delivery Instructions</h3>
+            <p>For contactless delivery or specific instructions, please add notes to your order at checkout or call us.</p>
+        </div>
+
+        <!-- Contact for Delivery Questions -->
+        <div class="delivery-contact">
+            <h3>Need Help?</h3>
+            <p>If you have questions about your delivery, please call us:</p>
+            <button class="call-btn">Call Us Now</button>
+            <p>Or email us at: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content" id="footer">
+        <div class="footer-logo">
+            <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
+            <h1>MB's Food Hub</h1>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines, Roxas City, Philippines</p>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#menu">Cuisine</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#promos">Promos</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2023 MB's Food Hub. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Open lightbox with the specified image
+function openLightbox(imageSrc) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-image").src = imageSrc;
+}
+
+// Close lightbox
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+
+// Show the button when the user scrolls down 20px from the top
+window.onscroll = function() {
+    toggleBackToTopBtn();
+};
+
+function toggleBackToTopBtn() {
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+// Smooth scroll back to the top when button is clicked
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+</script>
 
 </body>
 </html>

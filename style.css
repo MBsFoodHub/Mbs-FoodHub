@@ -6,26 +6,49 @@
 }
 
 /* Header (Logo and Navigation) */
+/* Header and centering */
 header {
-  text-align: center;
-  padding: 1em 0;
   background-color: #121212;
-  border-bottom: 1px solid #d0d0d0;  /* Light border around each card */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em 0;
 }
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo with image beside the text */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+}
+
+/* Navigation menu styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  padding-top: 10px; /* Space between logo and menu */
+}
+
+
 
 header .logo h1 {
   font-size: 2.5em;
   color: #d0d6d0;
-  margin-bottom: 10px;
+  
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
+
 
 nav ul li a {
   color: #179e10;
@@ -42,10 +65,11 @@ nav ul li a::after {
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #ff6347;
+  background-color: #f7f3f2;
   bottom: 0;
   left: 50%;
   transition: width 0.3s, left 0.3s;
+  margin-top: 10px;
 }
 nav ul li a:hover::after {
   width: 100%;
@@ -61,7 +85,7 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  border-bottom: 1px solid #d0d0d0;
   
 }
 
@@ -86,7 +110,7 @@ nav ul li a:hover::after {
 
 .left-image-box img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0;
  
   
 }
@@ -101,7 +125,7 @@ nav ul li a:hover::after {
 
 .right-image-box img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0;
 
 }
 
@@ -138,18 +162,43 @@ nav ul li a:hover::after {
   color: white;
 }
 
+/* Back to Top Button */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100; /* Make sure it’s above other elements */
+  background-color: #32a917; /* Button color */
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s; /* Smooth fade-in/out */
+}
+
+#backToTopBtn:hover {
+  background-color: #555; /* Hover color */
+}
+
+
+
 /* Menu Section */
 .menu {
   padding: 2em;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #2c2b2b;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .menu-container {
-  background-color: white;
+  background-color: #d0d0d0;
   padding: 2em;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  box-shadow: 0 4px 8px red; /* Adds subtle shadow */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -157,6 +206,17 @@ nav ul li a:hover::after {
 .menu h2 {
   font-size: 2.5em;
   margin-bottom: 1.5em;
+}
+
+/* Underline with glowing effect */
+.menu h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: red;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
 }
 
 .menu-grid {
@@ -167,6 +227,16 @@ nav ul li a:hover::after {
 
 .menu-item {
   width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background-color: white;
+  border: 1px solid #ddd;  /* Light border around each card */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
+  transition: transform 0.3s ease;
 }
 
 .menu-item img {
@@ -202,72 +272,33 @@ nav ul li a:hover::after {
   background-color: #555;
 }
 
-/* Promo Section */
 
-.promos {
-  padding: 2em;
-  text-align: center;
-  background-color: #f4f4f4;
-}
-
-.promo-container {
-  background-color: white;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.promos h2 {
-  font-size: 2.5em;
-  margin-bottom: 1.5em;
-  text-align: left;  /* Align the title to the left */
-  position: relative;  /* Positioning for the L-shaped line */
-  color: #32a917;
-}
-
-.promos h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px; /* Position the line right below the title */
-  width: 130px;   /* Length of the horizontal part of the L-shape */
-  height: 5px;   /* Thickness of the line */
-  background-color: #32a917;  /* Color of the line */
-}
-
-
-
-
-.promo-grid {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-}
 
 /* Promo Section */
 
 .promos {
   padding: 2em;
   text-align: left; /* Aligns the title to the left */
-  background-color: #f4f4f4;
+  background-color: #2c2b2b;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .promo-container {
-  background-color: white;
+  background-color: #d0d0d0;
   padding: 2em;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  box-shadow: 0 4px 8px red; /* Adds subtle shadow */
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 .promos h2 {
   font-size: 2.5em;
   margin-bottom: 1.5em;
-  position: relative;
-  display: inline-block; /* Keep title inline for the underline effect */
+  text-align: center;  /* Align the title to the left */
+  position: relative;  /* Positioning for the L-shaped line */
+  
 }
 
 /* Underline with glowing effect */
@@ -276,7 +307,7 @@ nav ul li a:hover::after {
   display: block;
   width: 100%; /* Full width under the title */
   height: 4px;
-  background-color: #333;
+  background-color: red;
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
 }
@@ -331,4 +362,258 @@ nav ul li a:hover::after {
     width: 100%;
 
   }
+}
+
+/* Lightbox container */
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Lightbox image styling */
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #fff;
+  border-radius: 8px;
+}
+
+/* About Hero Section */
+.about-hero {
+  background-color: #2c2b2b;
+  color: #d0d6d0;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.about-hero h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 1.2em;
+  color: #32a917;
+}
+
+/* About Content Section */
+.about-content {
+  background-color: #121212;
+  color: #d0d6d0;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.about-content h3 {
+  font-size: 2em;
+  color: #32a917;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+
+/* Delivery Section */
+.delivery {
+  padding: 2em;
+  text-align: center;
+  background-color: #2c2b2b;
+  color: #d0d6d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.delivery-container {
+  background-color: #121212;
+  padding: 2em;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delivery h2, .delivery h3 {
+  color: #32a917;
+}
+
+.delivery-info ul {
+  list-style-type: none;
+  padding: 0;
+  color: #d0d6d0;
+}
+
+.delivery-info ul li {
+  margin-bottom: 5px;
+}
+
+.order-tracking input {
+  padding: 10px;
+  width: 70%;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.track-order-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #32a917;
+  color: #121212;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.track-order-btn:hover {
+  background-color: #555;
+  color: white;
+}
+
+.delivery-contact .call-btn {
+  padding: 10px 20px;
+  background-color: #d0d6d0;
+  color: #121212;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.delivery-contact .call-btn:hover {
+  background-color: #555;
+  color: white;
+}
+
+.delivery a {
+  color: #32a917;
+  text-decoration: none;
+}
+
+.delivery a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  background-color: #121212;
+  color: #d0d6d0;
+  padding: 40px 20px;
+  border-top: 1px solid #d0d0d0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: 50px ;
+  margin-right: 50px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-image {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-logo h1 {
+  color: #d0d6d0;
+  font-size: 1.5em;
+}
+
+/* Contact Info Styling */
+.footer-contact h4, .footer-social h4, .footer-links h4 {
+  color: #32a917;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-contact p {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.footer-contact a {
+  color: #32a917;
+  text-decoration: none;
+}
+
+/* Social Media Links Styling */
+.footer-social a i {
+  font-size: 24px;
+  color: #d0d6d0;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.footer-social a:hover i {
+  color: #32a917;
+  transform: scale(1.1);
+}
+
+
+/* Quick Links Styling */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+  color: #d0d6d0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #32a917;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #d0d0d0;
+  margin-top: 20px;
 }
