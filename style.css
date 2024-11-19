@@ -7,80 +7,84 @@
 
 /* Header (Logo and Navigation) */
 /* Header and centering */
+
 header {
-  background-color: #121212;
-  border-bottom: 1px solid #d0d0d0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e; /* Darker background for better contrast */
+  border-bottom: 2px solid white; /* Green border for a fresh look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 1em 0;
+  color: white;
 }
 
 .header-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Space between logo and nav */
   align-items: center;
+  max-width: 1200px; /* Limit width for better layout */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Padding for sides */
 }
 
-/* Logo with image beside the text */
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px; /* Increased gap for better spacing */
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
+  width: 70px; /* Increased logo size */
+  height: 70px; /* Increased logo size */
+  border-radius: 50%; /* Make logo circular */
+  object-fit: cover; /* Ensure the image covers the circle */
 }
 
-/* Navigation menu styling */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2em;
-  padding-top: 10px; /* Space between logo and menu */
+  gap: 2em; /* Space between navigation items */
 }
-
-
-
-header .logo h1 {
-  font-size: 2.5em;
-  color: #d0d6d0;
-  
-}
-
-
 
 nav ul li a {
-  color: #179e10;
+  color: #32a917; /* Green color for links */
   text-decoration: none;
-  font-size: 1.2em;
-  margin: 1px 0 0 0;
+  font-size: 1.2em; /* Slightly larger font for better readability */
+  padding: 10px 15px; /* Padding around links for better click area */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
-nav ul li a {
-  position: relative;
-}
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #f7f3f2;
-  bottom: 0;
-  left: 50%;
-  transition: width 0.3s, left 0.3s;
-  margin-top: 10px;
-}
-nav ul li a:hover::after {
-  width: 100%;
-  left: 0;
+nav ul li a:hover {
+  background-color: rgba(50, 169, 23, 0.2); /* Light green background on hover */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  color: #fff; /* Change text color on hover */
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align items to the start */
+  }
+
+  .logo {
+      margin-bottom: 1em; /* Space between logo and nav */
+  }
+
+  nav ul {
+      flex-direction: column; /* Stack navigation items vertically */
+      gap: 1em; /* Space between nav items */
+  }
+
+  nav ul li a {
+      font-size: 1.5em; /* Larger font size for smaller screens */
+      padding: 10px; /* Adjust padding for better touch targets */
+  }
+}
 
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-  background-image: url('Pics/Bg2.jpg'); /* Add a stunning background image */
+  background-image: url('Pics/Shop.jpg'); /* Add a stunning background image */
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
   height: 100vh; /* Full height of the viewport */
@@ -92,7 +96,47 @@ nav ul li a:hover::after {
   position: relative; /* Position relative for overlay */
 }
 
+@media (max-width: 768px) {
+  .hero {
+      height: 50vh; /* Adjust height for smaller screens */
+  }
+  
+  .hero h1 {
+      font-size: 2.5em; /* Smaller font size */
+  }
+  
+  .hero p {
+      font-size: 1.2em; /* Smaller subtitle */
+  }
 
+  .header-content {
+    padding: 1.5em 0; /* Increase padding for more space */
+}
+
+.header-content h1 {
+    font-size: 3em; /* Increase font size for the header */
+}
+
+nav ul li a {
+    font-size: 2em; /* Larger font size for navigation links */
+}
+
+.logo-image {
+    width: 80px; /* Increase logo size */
+    height: 80px; /* Increase logo size */
+}
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  z-index: 1; /* Ensure the overlay is below the text */
+}
 
 .hero-content {
   position: relative; /* Position relative to overlay */
@@ -117,32 +161,16 @@ nav ul li a:hover::after {
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor */
-  transition: background-color 0.3s; /* Smooth transition */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 .explore-btn:hover {
-  background-color: #28a745; /* Darker green on hover */
+  background-color: rgba(50, 169, 23, 0.2); /* Light green background on hover */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  color: #fff; /* Change text color on hover */
+  border: 1px solid black;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .hero {
-      height: 50vh; /* Adjust height for smaller screens */
-  }
-  
-  .hero h1 {
-      font-size: 2.5em; /* Smaller font size */
-  }
-  
-  .hero p {
-      font-size: 1.2em; /* Smaller subtitle */
-  }
-  
-  .explore-btn {
-      padding: 10px 20px; /* Adjust button size */
-      font-size: 1em; /* Smaller button font */
-  }
-}
 
 /* Back to Top Button */
 #backToTopBtn {
@@ -370,16 +398,7 @@ nav ul li a:hover::after {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-  }
-  .left-image-box, .right-image-box {
-    width: 100%;
 
-  }
-}
 
 /* Lightbox container */
 #lightbox {
@@ -513,8 +532,11 @@ footer {
 }
 
 .footer-logo-image {
-  width: 40px;
-  height: 40px;
+  width: 70px; /* Increased logo size */
+  height: 70px; /* Increased logo size */
+  border-radius: 50%; /* Make logo circular */
+  object-fit: cover; /* Ensure the image covers the circle */
+
 }
 
 .footer-logo h1 {
