@@ -8,16 +8,17 @@
         <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
 <body>
     <!-- Header with logo and navigation -->
     <header>
         <div class="header-content" id="header">
             <div class="logo">
-                <img src="Pics/Logo.jpg" alt="Logo" class="logo-image">
-              
+                <img src="Pics/Logo.jpg" alt="Logo" class="logo-image" id="logo" onclick="openFullscreenLogo()">
                 <h1>MB's Food Hub</h1>
             </div>
+            
             <nav>
                 <ul>
                     <li><a href="#header">Home</a></li>
@@ -41,7 +42,9 @@
         <div class="hero-content">
             <h1>Welcome to MB's Food Hub</h1>
             <p>Your favorite place for delicious meals!</p>
-            <button class="explore-btn">Explore Our Menu</button>
+            <a href="#menu">
+                <button class="explore-btn">Explore Our Menu</button>
+            </a>
         </div>
     </section>
 
@@ -292,10 +295,7 @@
     </div>
 </footer>
 
-<script>
 
-
-</script>
 
 </body>
 </html>

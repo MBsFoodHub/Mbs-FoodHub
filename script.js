@@ -33,3 +33,47 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
+function openFullscreenLogo() {
+    var fullscreenLogo = document.getElementById("fullscreen-logo");
+  
+    // Create a full-screen container if it doesn't exist
+    if (!fullscreenLogo) {
+      fullscreenLogo = document.createElement("div");
+      fullscreenLogo.id = "fullscreen-logo";
+      fullscreenLogo.style.position = "fixed";
+      fullscreenLogo.style.top = "0";
+      fullscreenLogo.style.left = "0";
+      fullscreenLogo.style.width = "100%";
+      fullscreenLogo.style.height = "100%";
+      fullscreenLogo.style.backgroundColor = "rgba(0, 0, 0, 0.8)"; // Dark background
+      fullscreenLogo.style.display = "flex";
+      fullscreenLogo.style.justifyContent = "center";
+      fullscreenLogo.style.alignItems = "center";
+      fullscreenLogo.style.zIndex = "1000"; // Ensure it's on top of everything
+      fullscreenLogo.onclick = function() { // Close when clicking outside
+        fullscreenLogo.style.display = "none";
+      };
+  
+      // Create the circular logo image
+      var logoImage = document.createElement("img");
+      logoImage.src = "Pics/Logo.jpg";
+      logoImage.style.width = "200px"; // Adjust size as needed
+      logoImage.style.height = "200px"; // Adjust size as needed
+      logoImage.style.borderRadius = "50%"; // Make it circular
+      logoImage.style.objectFit = "cover"; // Maintain aspect ratio
+      logoImage.style.cursor = "default"; // Default cursor
+      fullscreenLogo.appendChild(logoImage);
+  
+      document.body.appendChild(fullscreenLogo);
+    }
+  
+    // Toggle full-screen mode
+    if (fullscreenLogo.style.display === "block") {
+      fullscreenLogo.style.display = "none";
+    } else {
+      fullscreenLogo.style.display = "flex"; // Show the logo
+    }
+  }
+
+  

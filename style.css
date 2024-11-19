@@ -8,6 +8,7 @@
 /* Header (Logo and Navigation) */
 /* Header and centering */
 
+
 header {
   background-color: #1e1e1e; /* Darker background for better contrast */
   border-bottom: 2px solid white; /* Green border for a fresh look */
@@ -304,8 +305,9 @@ nav ul li a {
 }
 
 #lightbox img {
-  max-width: 90%; /* Ensure the image takes full width of the container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 90%; /* Ensure the image takes up to 90% of the width of the lightbox */
+  max-height: 90%; /* Ensure the image takes up to 90% of the height of the lightbox */
+  object-fit: contain; /* Maintain the aspect ratio without cropping */
   border: 5px solid #fff; /* Optional border */
   border-radius: 8px; /* Optional rounded corners */
 }
