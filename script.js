@@ -76,4 +76,21 @@ function openFullscreenLogo() {
     }
   }
 
-  
+  /* Show the button when scrolling down */
+window.onscroll = function() {
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      backToTopBtn.style.display = "block"; /* Show button */
+  } else {
+      backToTopBtn.style.display = "none"; /* Hide button */
+  }
+};
+
+function openSidebar() {
+  document.getElementById("sidebar").classList.add("open");
+}
+
+function closeSidebar() {
+  document.getElementById("sidebar").classList.remove("open");
+}
+

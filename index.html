@@ -13,138 +13,91 @@
 <body>
     <!-- Header with logo and navigation -->
     <header>
-        <div class="header-content" id="header">
+        <div class="container">
             <div class="logo">
-                <img src="Pics/Logo.jpg" alt="Logo" class="logo-image" id="logo" onclick="openFullscreenLogo()">
                 <h1>MB's Food Hub</h1>
             </div>
-            
             <nav>
-                <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#menu">Cuisine</a></li>
-                    <li><a href="#delivery">Delivery</a></li>
+                <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
+                    &#9776; <!-- Hamburger icon -->
+                </label>
+                <ul class="nav-linked">
+                    <li><a href="#hero">Home</a></li>
                     <li><a href="#promos">Promos</a></li>
+                    <li><a href="#menu">Menu</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
+                    <li><a href="#delivery">Delivery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">×</button>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#promos">Promos</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
     <!-- Back to Top Button -->
 <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
     ↑
 </button>
 
     <!-- Hero Section with two image boxes -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Welcome to MB's Food Hub</h1>
-            <p>Your favorite place for delicious meals!</p>
-            <a href="#menu">
-                <button class="explore-btn">Explore Our Menu</button>
-            </a>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <h1>Welcome to MB's Food Hub</h1>
+        <p>Your destination for delicious and affordable meals!</p>
+        <a href="#menu" class="cta-button">Explore Our Menu</a>
+        <div class="indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+            <span class="indicator" onclick="currentSlide(4)"></span>
         </div>
-    </section>
+        <div class="arrows">
+            <span class="arrow left" onclick="plusSlides(-1)">&#10094;</span>
+            <span class="arrow right" onclick="plusSlides(1)">&#10095;</span>
+        </div>
+    </div>
+</section>
 
-    <!-- Menu Section -->
-    <section class="menu" id="menu">
-        <div class="menu-container">
-            <h2>Cuisine</h2>
-            <div class="menu-grid">
-                <div class="menu-item" onclick="openLightbox('Foods/Pareswithegg.jpg', 'Pares & Egg')">
-                    <img src="Foods/Pareswithegg.jpg" alt="Pares & Egg">
-                    <p>Pares & Egg</p>
-                    <p>₱89</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/Pork SisigwithRiceandEgg.jpg', 'Pork Sisig & Egg')">
-                    <img src="Foods/Pork SisigwithRiceandEgg.jpg" alt="Pork Sisig & Egg">
-                    <p>Pork Sisig & Egg</p>
-                    <p>₱89</p>
-                </div>
-             
-                <div class="menu-item" onclick="openLightbox('Foods/404139445_327220596588498_1442696908660396405_n.jpg', 'Pares Mami')">
-                    <img src="Foods/404139445_327220596588498_1442696908660396405_n.jpg" alt="Pares Mami">
-                    <p>Pares Mami</p>
-                    <p>₱55</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/Pork Sisig.jpg', 'Pork Sisig')">
-                    <img src="Foods/Pork Sisig.jpg" alt="Pork Sisig">
-                    <p>Pork Sisig</p>
-                    <p>₱89</p>
-                </div>
 
-                <div class="menu-item" onclick="openLightbox('Foods/Bulaklak.jpg', 'Bulaklak')">
-                    <img src="Foods/Bulaklak.jpg" alt="Bulaklak">
-                    <p>Bulaklak</p>
-                    <p>₱169</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/PorkSinigang.png', 'Pork Sinigang')">
-                    <img src="Foods/PorkSinigang.png" alt="Pork Sinigang">
-                    <p>Pork Sinigang</p>
-                    <p>₱99</p>
-                </div>
-
-                <div class="menu-item" onclick="openLightbox('Foods/BurgerSteak.png', 'Burger Steak')">
-                    <img src="Foods/BurgerSteak.png" alt="Burger Steak">
-                    <p>Burger Steak</p>
-                    <p>₱99</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/ChickenBinakol.png', 'Chicken Binakol')">
-                    <img src="Foods/ChickenBinakol.png" alt="Chicken Binakol">
-                    <p>Chicken Binakol</p>
-                    <p>₱99</p>
-                </div>
-
-                <div class="menu-item" onclick="openLightbox('Foods/ChickenSisig.png', 'Chicken Sisig')">
-                    <img src="Foods/ChickenSisig.jpg" alt="Pares Mami">
-                    <p>Chicken Sisig</p>
-                    <p>₱99</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/FriedChicken.png', 'Fried Chicken')">
-                    <img src="Foods/FriedChicken.png" alt="Fried Chicken">
-                    <p>Fried Chicken</p>
-                    <p>₱99</p>
-                </div>
-
-                <div class="menu-item" onclick="openLightbox('Foods/Grilled Port.png', 'Grilled Pork')">
-                    <img src="Foods/Grilled Port.png" alt="Grilled Pork">
-                    <p>Grilled Pork</p>
-                    <p>₱99</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('FoodsPorkSisig.png', 'Pork Sisig')">
-                    <img src="Foods/PorkSisig.jpg" alt="Pork Sisig">
-                    <p>Pork Sisig</p>
-                    <p>₱99</p>
-                </div>
-
-                <div class="menu-item" onclick="openLightbox('Foods/Breaded Pork.png', 'Breaded Pork')">
-                    <img src="Foods/Breaded Pork.png" alt="Pares Mami">
-                    <p>Breaded Pork</p>
-                    <p>₱99</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/Hotdog & Egg.png', 'Hotdog & Egg')">
-                    <img src="Foods/Hotdog & Egg.png" alt="Pares with Egg">
-                    <p>Hotdog & Egg</p>
-                    <p>₱79</p>
-                </div>
-
-                <div class="menu-item" onclick="openLightbox('Foods/Tocino & Egg.png', 'Tocino & Egg')">
-                    <img src="Foods/Tocino & Egg.png" alt="Pares Mami">
-                    <p>Tocino & Egg</p>
-                    <p>₱79</p>
-                </div>
-                <div class="menu-item" onclick="openLightbox('Foods/Longganisa & Egg.png', 'Longganisa & Egg')">
-                    <img src="Foods/Longganisa & Egg.png" alt="Pares with Egg">
-                    <p>Longganisa & Egg</p>
-                    <p>₱79</p>
-                </div>
-                
-                <!-- Add 14 more menu items here -->
+    <!-- Promo grid -->
+    <section class="promos" id="promos">
+        <div class="promo-container">
+            <h2>Promos</h2>
+            <div class="promo-grid">
+                <a href="#promos" class="promo-item" onclick="openLightbox('Foods/Promo.jpg')">
+                    <img src="Foods/Promo.jpg" alt="Promo 1">
+                    <p>Sinadya Promo!</p>
+                </a>
+                <!--<a href="#promos" class="promo-item" onclick="openLightbox('promo2.jpg')">
+                    <img src="promo2.jpg" alt="Promo 2">
+                    <p>Promo 2</p>
+                </a>
+                <a href="#promos" class="promo-item" onclick="openLightbox('promo3.jpg')">
+                    <img src="promo3.jpg" alt="Promo 3">
+                    <p>Promo 3</p>
+                </a>
+                <a href="#promos" class="promo-item" onclick="openLightbox('promo4.jpg')">
+                    <img src="promo4.jpg" alt="Promo 4">
+                    <p>Promo 4</p>
+                </a>-->
             </div>
         </div>
     </section>
+
+
+   
     
 
 
@@ -164,30 +117,7 @@
 
 
 
-    <!-- Promo grid -->
-<section class="promos" id="promos">
-    <div class="promo-container">
-        <h2>Promos</h2>
-        <div class="promo-grid">
-            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/Promo.jpg')">
-                <img src="Foods/Promo.jpg" alt="Promo 1">
-                <p>Sinadya Promo!</p>
-            </a>
-            <!--<a href="#promos" class="promo-item" onclick="openLightbox('promo2.jpg')">
-                <img src="promo2.jpg" alt="Promo 2">
-                <p>Promo 2</p>
-            </a>
-            <a href="#promos" class="promo-item" onclick="openLightbox('promo3.jpg')">
-                <img src="promo3.jpg" alt="Promo 3">
-                <p>Promo 3</p>
-            </a>
-            <a href="#promos" class="promo-item" onclick="openLightbox('promo4.jpg')">
-                <img src="promo4.jpg" alt="Promo 4">
-                <p>Promo 4</p>
-            </a>-->
-        </div>
-    </div>
-</section>
+
 
 <!-- Lightbox for fullscreen images -->
 

@@ -5,173 +5,227 @@
   box-sizing: border-box;
 }
 
-/* Header (Logo and Navigation) */
-/* Header and centering */
-
-
+/* Header Styles */
 header {
-  background-color: #1e1e1e; /* Darker background for better contrast */
-  border-bottom: 2px solid white; /* Green border for a fresh look */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 1em 0;
-  color: white;
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px 0; /* Padding for top and bottom */
 }
 
-.header-content {
-  display: flex;
+header .container {
+  display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between logo and nav */
-  align-items: center;
-  max-width: 1200px; /* Limit width for better layout */
-  margin: 0 auto; /* Center the content */
-  padding: 0 20px; /* Padding for sides */
+  align-items: center; /* Center items vertically */
+  max-width: 1200px; /* Max width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Padding for left and right */
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Increased gap for better spacing */
+.nav-linked {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flexbox for horizontal layout */
 }
 
-.logo-image {
-  width: 70px; /* Increased logo size */
-  height: 70px; /* Increased logo size */
-  border-radius: 50%; /* Make logo circular */
-  object-fit: cover; /* Ensure the image covers the circle */
+.nav-linked li {
+  margin-left: 20px; /* Space between menu items */
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2em; /* Space between navigation items */
+.nav-linked a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
 }
 
-nav ul li a {
-  color: #32a917; /* Green color for links */
-  text-decoration: none;
-  font-size: 1.2em; /* Slightly larger font for better readability */
-  padding: 10px 15px; /* Padding around links for better click area */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+/* Hamburger Icon */
+.menu-icon {
+  display: block; /* Show the hamburger icon */
+  font-size: 30px; /* Size of the hamburger icon */
+  cursor: pointer; /* Pointer cursor */
+}
+/* Navigation Links */
+.nav-links {
+  display: flex; /* Show links in a row */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
 
-nav ul li a:hover {
-  background-color: rgba(50, 169, 23, 0.2); /* Light green background on hover */
-  border-radius: 5px; /* Rounded corners for hover effect */
-  color: #fff; /* Change text color on hover */
-}
-
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .header-content {
-      flex-direction: column; /* Stack elements vertically */
-      align-items: flex-start; /* Align items to the start */
+  .menu-icon {
+      display: block; /* Show the hamburger icon on small screens */
   }
 
-  .logo {
-      margin-bottom: 1em; /* Space between logo and nav */
+  .nav-links {
+      display: none; /* Hide the navigation links by default on small screens */
   }
 
-  nav ul {
-      flex-direction: column; /* Stack navigation items vertically */
-      gap: 1em; /* Space between nav items */
+  .nav-linked {
+    display: none;
   }
 
-  nav ul li a {
-      font-size: 1.5em; /* Larger font size for smaller screens */
-      padding: 10px; /* Adjust padding for better touch targets */
+  .sidebar.open .nav-links {
+      display: flex; /* Show the links when the sidebar is open */
+      flex-direction: column; /* Stack links vertically */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-icon {
+      display: none; /* Hide the hamburger icon on larger screens */
+  }
+
+  .nav-links {
+      display: flex; /* Show the navigation links in a row on larger screens */
+  }
+}
+/* Sidebar Styles */
+.sidebar {
+  position: fixed; /* Fixed position to stay in view */
+  top: 0;
+  right: -300px; /* Start off-screen on the right */
+  width: 300px; /* Width of the sidebar */
+  height: 100%; /* Full height */
+  background-color: #444; /* Background color */
+  color: white; /* Text color */
+  transition: right 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it’s above other content */
+  padding: 20px; /* Padding inside the sidebar */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.sidebar.open {
+  right: 0; /* Bring the sidebar into view */
+}
+
+.close-btn {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: white; /* Close button color */
+  font-size: 30px; /* Size of the close button */
+  cursor: pointer; /* Pointer cursor */
+  position: absolute; /* Positioning for the close button */
+  top: 10px; /* Position from the top */
+  left: 20px; /* Position from the left */
+}
+
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  width: 100%; /* Full width for the links */
+}
+
+.nav-links li {
+  margin: 20px 0; /* Space between menu items */
+  text-align: center; /* Center text */
+}
+
+.nav-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  font-size: 2rem; /* Responsive font size */
+  transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+/* Responsive Font Size */
+@media (max-width: 768px) {
+  .nav-links a {
+      font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+  .nav-linked a {
+    font-size: 1.2rem; /* Smaller font size for even smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links a {
+      font-size: 2.5rem; /* Larger font size for larger screens */
+  }
+  .nav-linked a {
+    font-size: 1.5rem; /* Smaller font size for even smaller screens */
   }
 }
 
 
-/* Hero Section */
-/* Hero Section */
+/* Hero Section Styles */
 .hero {
-  background-image: url('Pics/Shop.jpg'); /* Add a stunning background image */
-  background-size: cover; /* Cover the entire section */
-  background-position: center; /* Center the image */
-  height: 100vh; /* Full height of the viewport */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white; /* White text for contrast */
-  position: relative; /* Position relative for overlay */
-}
-
-@media (max-width: 768px) {
-  .hero {
-      height: 50vh; /* Adjust height for smaller screens */
-  }
-  
-  .hero h1 {
-      font-size: 2.5em; /* Smaller font size */
-  }
-  
-  .hero p {
-      font-size: 1.2em; /* Smaller subtitle */
-  }
-
-  .header-content {
-    padding: 1.5em 0; /* Increase padding for more space */
-}
-
-.header-content h1 {
-    font-size: 3em; /* Increase font size for the header */
-}
-
-nav ul li a {
-    font-size: 2em; /* Larger font size for navigation links */
-}
-
-.logo-image {
-    width: 80px; /* Increase logo size */
-    height: 80px; /* Increase logo size */
-}
+    position: relative; /* Position relative for absolute children */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow */
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-  z-index: 1; /* Ensure the overlay is below the text */
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path/to/your/image1.jpg'); /* First background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    animation: slide 15s infinite; /* Animation for the slideshow */
+    z-index: 0; /* Behind the content */
+}
+
+/* Keyframes for the slideshow */
+@keyframes slide {
+    0% {
+        background-image: url('path/to/your/image1.jpg'); /* First image */
+    }
+    33% {
+        background-image: url('path/to/your/image2.jpg'); /* Second image */
+    }
+    66% {
+        background-image: url('path/to/your/image3.jpg'); /* Third image */
+    }
+    100% {
+        background-image: url('path/to/your/image1.jpg'); /* Loop back to the first image */
+    }
 }
 
 .hero-content {
-  position: relative; /* Position relative to overlay */
-  z-index: 2; /* Ensure content is above overlay */
+    position: relative; /* Position relative for content */
+    max-width: 600px; /* Limit the width of the content */
+    z-index: 1; /* Above the background */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100%; /* Full height to center content */
 }
 
 .hero h1 {
-  font-size: 4em; /* Larger font size for the title */
-  margin-bottom: 0.5em; /* Space below title */
+    font-size: 3rem; /* Large font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
 }
 
 .hero p {
-  font-size: 1.5em; /* Slightly larger font for the subtitle */
-  margin-bottom: 1.5em; /* Space below subtitle */
+    font-size: 1.5rem; /* Medium font size for the paragraph */
+    margin-bottom: 30px; /* Space below the paragraph */
 }
 
-.explore-btn {
-  padding: 15px 30px; /* Padding for button */
-  font-size: 1.2em; /* Font size for button */
-  background-color: #32a917; /* Button color */
-  color: white; /* Button text color */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+.cta-button {
+    background-color: #32a917; /* Button color */
+    color: white; /* Text color */
+    padding: 15px 30px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.explore-btn:hover {
-  background-color: rgba(50, 169, 23, 0.2); /* Light green background on hover */
-  border-radius: 5px; /* Rounded corners for hover effect */
-  color: #fff; /* Change text color on hover */
-  border: 1px solid black;
+.cta-button:hover {
+    background-color: #28a745; /* Darker green on hover */
 }
-
 
 /* Back to Top Button */
 #backToTopBtn {
@@ -206,8 +260,7 @@ nav ul li a {
 }
 
 .menu-container {
-    max-height: 600px; /* Set a fixed height */
-    overflow-y: auto; /* Enable vertical scrolling */
+
     background-color: #d0d0d0; /* Existing background color */
     padding: 2em;
     border-radius: 12px;
