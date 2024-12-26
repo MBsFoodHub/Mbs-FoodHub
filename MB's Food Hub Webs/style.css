@@ -1,0 +1,731 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  background-color: #333; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px 0; /* Padding for top and bottom */
+}
+
+header .container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center; /* Center items vertically */
+  max-width: 1200px; /* Max width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Padding for left and right */
+}
+
+.nav-linked {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flexbox for horizontal layout */
+}
+
+.nav-linked li {
+  margin-left: 20px; /* Space between menu items */
+}
+
+.nav-linked a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: block; /* Show the hamburger icon */
+  font-size: 30px; /* Size of the hamburger icon */
+  cursor: pointer; /* Pointer cursor */
+}
+/* Navigation Links */
+.nav-links {
+  display: flex; /* Show links in a row */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+      display: block; /* Show the hamburger icon on small screens */
+  }
+
+  .nav-links {
+      display: none; /* Hide the navigation links by default on small screens */
+  }
+
+  .nav-linked {
+    display: none;
+  }
+
+  .sidebar.open .nav-links {
+      display: flex; /* Show the links when the sidebar is open */
+      flex-direction: column; /* Stack links vertically */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-icon {
+      display: none; /* Hide the hamburger icon on larger screens */
+  }
+
+  .nav-links {
+      display: flex; /* Show the navigation links in a row on larger screens */
+  }
+}
+/* Sidebar Styles */
+.sidebar {
+  position: fixed; /* Fixed position to stay in view */
+  top: 0;
+  right: -300px; /* Start off-screen on the right */
+  width: 300px; /* Width of the sidebar */
+  height: 100%; /* Full height */
+  background-color: #444; /* Background color */
+  color: white; /* Text color */
+  transition: right 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it’s above other content */
+  padding: 20px; /* Padding inside the sidebar */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.sidebar.open {
+  right: 0; /* Bring the sidebar into view */
+}
+
+.close-btn {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: white; /* Close button color */
+  font-size: 30px; /* Size of the close button */
+  cursor: pointer; /* Pointer cursor */
+  position: absolute; /* Positioning for the close button */
+  top: 10px; /* Position from the top */
+  left: 20px; /* Position from the left */
+}
+
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  width: 100%; /* Full width for the links */
+}
+
+.nav-links li {
+  margin: 20px 0; /* Space between menu items */
+  text-align: center; /* Center text */
+}
+
+.nav-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  font-size: 2rem; /* Responsive font size */
+  transition: font-size 0.3s ease; /* Smooth transition for font size */
+}
+
+/* Responsive Font Size */
+@media (max-width: 768px) {
+  .nav-links a {
+      font-size: 1.5rem; /* Smaller font size for smaller screens */
+  }
+  .nav-linked a {
+    font-size: 1.2rem; /* Smaller font size for even smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links a {
+      font-size: 2.5rem; /* Larger font size for larger screens */
+  }
+  .nav-linked a {
+    font-size: 1.5rem; /* Smaller font size for even smaller screens */
+  }
+}
+
+/* Hero Section Styles */
+.hero {
+  background-image: url('Foods/HeroImage.jpg'); /* Replace with your hero image path */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  height: 400px; /* Set height for the hero section */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+}
+
+.hero-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 20px; /* Padding around the text */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.hero h1 {
+  font-size: 3em; /* Large font size for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.hero p {
+  font-size: 1.5em; /* Medium font size for the description */
+  margin-bottom: 20px; /* Space below the description */
+}
+
+.hero-btn {
+  background-color: #32a917; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* No underline */
+  font-size: 1.2em; /* Font size for the button */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.hero-btn:hover {
+  background-color: #28a745; /* Darker green on hover */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 400px; /* Set height for the hero section */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Slides */
+.mySlides {
+  display: none; /* Hide all slides by default */
+}
+
+/* Text on slides */
+.text {
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Back to Top Button */
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100; /* Make sure it’s above other elements */
+  background-color: #32a917; /* Button color */
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s; /* Smooth fade-in/out */
+}
+
+#backToTopBtn:hover {
+  background-color: #555; /* Hover color */
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  height: 400px; /* Set height for the hero section */
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Position relative for absolute children */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Background Slideshow */
+.background-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure it is behind the content */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  opacity: 0; /* Start hidden */
+  animation: fade 15s infinite; /* Change duration as needed */
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+
+/* Hero Content Styles */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensure it is above the background */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+}
+
+.hero h1 {
+  font-size: 3em; /* Large font size for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.hero p {
+  font-size: 1.5em; /* Medium font size for the description */
+  margin-bottom: 20px; /* Space below the description */
+}
+
+.hero-btn {
+  background-color: #32a917; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* No underline */
+  font-size: 1.2em; /* Font size for the button */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.hero-btn:hover {
+  background-color: #28a745; /* Darker green on hover */
+}
+
+
+/* Menu Section */
+.menu {
+  padding: 2em;
+  text-align: center;
+  background-color: #2c2b2b;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.menu-container {
+
+    background-color: #d0d0d0; /* Existing background color */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px red; /* Existing shadow */
+}
+
+.menu h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+
+/* Underline with glowing effect */
+.menu h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: red;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
+}
+
+.menu-grid {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px; /* Padding around the grid */
+}
+
+.menu-item {
+  text-align: center; /* Center align text */
+  background-color: white; /* Background color for each item */
+  border: 1px solid #ddd; /* Light border around each card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside each item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for each card */
+  transition: transform 0.3s ease; /* Transition effect */
+}
+
+.menu-item:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.menu-item img {
+
+  /* Should be changed to something more generic or something if needed -_- */
+
+  width: 100%; /* Ensure the image takes full width of the card */
+  height: 200px;  /* Adjust height to make the image bigger */
+  object-fit: cover; /* Keeps the aspect ratio and fits the image nicely */
+  border-radius: 8px;
+
+  
+}
+
+.menu-item p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Order Button */
+.order-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.order-btn:hover {
+  background-color: #555;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align children */
+}
+
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+
+
+/* Lightbox image styling */
+#lightbox img {
+  max-width: 50%; /* Set a maximum width for the image */
+  max-height:50%; /* Set a maximum height for the image */
+  width: auto; /* Allow width to adjust automatically */
+  height: auto; /* Allow height to adjust automatically */
+  object-fit: contain; /* Maintain the aspect ratio without cropping */
+  border: 5px solid #fff; /* Optional border */
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Promo Section Styles */
+.promos {
+  padding: 2em;
+  text-align: center;
+  background-color: #2c2b2b; /* Background color */
+  border-bottom: 1px solid #d0d0d0; /* Border for separation */
+}
+
+.promo-container {
+  background-color: #d0d0d0; /* Light background for the container */
+  padding: 2em;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px red; /* Subtle shadow */
+  max-width: 1200px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+.promos h2 {
+  font-size: 2.5em; /* Title font size */
+  margin-bottom: 1.5em; /* Space below the title */
+}
+
+/* Promo Grid */
+.promo-grid {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the items */
+}
+
+/* Promo Item Styles */
+.promo-item {
+  width: 100%; /* Make the promo item take full width */
+  max-width: 600px; /* Optional: Limit the max width for better readability */
+  text-align: center; /* Center align text */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color */
+  display: block; /* Make it a block element */
+  background-color: white; /* Background color for each item */
+  border: 1px solid #ddd; /* Light border around each card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside each item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for each card */
+  transition: transform 0.3s ease; /* Transition effect */
+}
+
+.promo-item:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.promo-item img {
+  width: 100%; /* Ensure the image takes full width of the card */
+  height: 300px; /* Adjust height for the image */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+.promo-item p {
+  margin-top: 10px; /* Space above the text */
+  font-size: 1.5em; /* Font size for the text */
+  font-weight: bold; /* Bold text */
+}
+
+
+/* Lightbox container */
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Lightbox image styling */
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #fff;
+  border-radius: 8px;
+}
+
+/* About Hero Section */
+.about-hero {
+  background-color: #2c2b2b;
+  color: #d0d6d0;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.about-hero h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  font-size: 1.2em;
+  color: #32a917;
+}
+
+/* About Content Section */
+.about-content {
+  background-color: #121212;
+  color: #d0d6d0;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.about-content h3 {
+  font-size: 2em;
+  color: #32a917;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+
+.delivery {
+  padding: 2em;
+  text-align: center; /* Center align text */
+  background-color: #2c2b2b; /* Match the background color with other sections */
+  border-bottom: 1px solid #d0d0d0; /* Add a border for separation */
+}
+
+.delivery-container {
+  background-color: #d0d0d0; /* Light background for the container */
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 800px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+.delivery-buttons {
+  display: flex; /* Use flexbox for button layout */
+  justify-content: center; /* Center the buttons */
+  gap: 20px; /* Space between buttons */
+  margin: 20px 0; /* Margin above and below the buttons */
+}
+
+.order-btn {
+  padding: 12px 20px; /* Padding for buttons */
+  background-color: #32a917; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-size: 1.2em; /* Font size for readability */
+}
+
+.order-btn:hover {
+  background-color: #28a745; /* Darker green on hover */
+}
+
+
+/* Footer */
+footer {
+  background-color: #121212;
+  color: #d0d6d0;
+  padding: 40px 20px;
+  border-top: 1px solid #d0d0d0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: 50px ;
+  margin-right: 50px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-image {
+  width: 70px; /* Increased logo size */
+  height: 70px; /* Increased logo size */
+  border-radius: 50%; /* Make logo circular */
+  object-fit: cover; /* Ensure the image covers the circle */
+
+}
+
+.footer-logo h1 {
+  color: #d0d6d0;
+  font-size: 1.5em;
+}
+
+/* Contact Info Styling */
+.footer-contact h4, .footer-social h4, .footer-links h4 {
+  color: #32a917;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-contact p {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.footer-contact a {
+  color: #32a917;
+  text-decoration: none;
+}
+
+
+
+/* Social Media Links Styling */
+.footer-social a i {
+  font-size: 24px;
+  color: #d0d6d0;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.footer-social a:hover i {
+  color: #32a917;
+  transform: scale(1.1);
+}
+
+
+/* Quick Links Styling */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+  color: #d0d6d0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #32a917;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 35px; /* Adjust this value */
+  padding-bottom: 1px; /* Add or adjust this value */
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #d0d0d0;
+  margin-top: 20px; /* Adjust this value */
+}

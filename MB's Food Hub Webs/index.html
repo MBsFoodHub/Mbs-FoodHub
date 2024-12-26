@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MB's Food Hub</title>
+        <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MB's Food Hub</h1>
+            </div>
+            <nav>
+                <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
+                    &#9776; <!-- Hamburger icon -->
+                </label>
+                <ul class="nav-linked">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#promos">Promos</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#delivery">Delivery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Sidebar Menu -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">×</button>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#promos">Promos</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
+    ↑
+</button>
+
+<!-- Hero Section with Background Slideshow -->
+<section class="hero" id="hero">
+    <div class="background-slideshow">
+        <div class="slide" style="background-image: url('Pics/462113796_1092418912248803_817625944647066349_n.jpg');"></div>
+        <div class="slide" style="background-image: url('Pics/462135215_1092418842248810_5438566189260946557_n.jpg');"></div>
+        <div class="slide" style="background-image: url('Pics/462140775_1092418742248820_5563631473993158795_n.jpg');"></div>
+    </div>
+    <div class="hero-content">
+        <h1>Welcome to MB's Food Hub</h1>
+        <p>Your destination for delicious and affordable meals!</p>
+        <a href="#menu" class="hero-btn">Explore Our Menu</a>
+    </div>
+</section>
+
+
+<!-- Promo Section -->
+<section class="promos" id="promos">
+    <div class="promo-container">
+        <h2>Promos</h2>
+        <div class="promo-grid">
+            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png')">
+                <img src="Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png" alt="Promo 1">
+                <p>Sinadya Promo!</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+   
+    
+
+
+
+
+  <!-- Lightbox for fullscreen images -->
+<div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="Fullscreen Image">
+        <!-- Removed the title element -->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Lightbox for fullscreen images -->
+
+
+    <!-- More content can go here -->
+
+    <section class="about-hero" id="about">
+        <h2>About Us</h2>
+        <p>Discover the story behind MB's Food Hub</p>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="about-text">
+            <h3>Our Story</h3>
+            <p>MB's Food Hub began as a small neighborhood kitchen with a big dream – to bring delicious, affordable, and wholesome meals to our community. Over the years, we’ve grown into a hub of flavor, known for our commitment to quality, authenticity, and customer satisfaction.</p>
+            <h3>Our Mission</h3>
+            <p>We aim to provide a welcoming space where people can enjoy great food made from fresh ingredients. At MB's Food Hub, we’re passionate about bringing you the best of both local and international flavors.</p>
+        </div>
+    </section>
+
+
+
+<!-- Delivery Section -->
+<section class="delivery" id="delivery">
+    <div class="delivery-container">
+        <h2>Order Delivery</h2>
+        <p>For food delivery, please choose one of the following services:</p>
+        
+        <!-- Delivery Buttons -->
+        <div class="delivery-buttons">
+            <!-- Maxim Button -->
+            <a href="https://www.maxim.com" target="_blank" class="delivery-btn">
+                <button class="order-btn">Order via Maxim</button>
+            </a>
+
+            <!-- Dory Button -->
+            <a href="https://www.dory.com" target="_blank" class="delivery-btn">
+                <button class="order-btn">Order via Dory</button>
+            </a>
+        </div>
+        
+        <p>Click on the buttons above to place your order through your preferred delivery service.</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content" id="footer">
+        <div class="footer-logo">
+            <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
+            <h1>MB's Food Hub</h1>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="footer-contact">
+            <br>
+            <br>
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
+            <p><a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a>
+            </p>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="footer-social">
+            <br>
+            <h4>Follow Us</h4>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#menu">Cuisine</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#promos">Promos</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2023 MB's Food Hub. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
