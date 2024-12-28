@@ -1,14 +1,11 @@
-
-function openLightbox(imageSrc, title) {
-    document.getElementById("lightbox-image").src = imageSrc; // Set the image source
-    document.getElementById("lightbox-title").innerText = title; // Set the title
-    document.getElementById("lightbox").style.display = "flex"; // Show the lightbox
+function openLightbox(imageSrc) {
+  document.getElementById("lightbox-image").src = imageSrc; // Set the image source
+  document.getElementById("lightbox").style.display = "flex"; // Show the lightbox
 }
-
 
 // Close lightbox
 function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
+  document.getElementById("lightbox").style.display = "none";
 }
 
 
@@ -34,47 +31,6 @@ function scrollToTop() {
     });
 }
 
-function openFullscreenLogo() {
-    var fullscreenLogo = document.getElementById("fullscreen-logo");
-  
-    // Create a full-screen container if it doesn't exist
-    if (!fullscreenLogo) {
-      fullscreenLogo = document.createElement("div");
-      fullscreenLogo.id = "fullscreen-logo";
-      fullscreenLogo.style.position = "fixed";
-      fullscreenLogo.style.top = "0";
-      fullscreenLogo.style.left = "0";
-      fullscreenLogo.style.width = "100%";
-      fullscreenLogo.style.height = "100%";
-      fullscreenLogo.style.backgroundColor = "rgba(0, 0, 0, 0.8)"; // Dark background
-      fullscreenLogo.style.display = "flex";
-      fullscreenLogo.style.justifyContent = "center";
-      fullscreenLogo.style.alignItems = "center";
-      fullscreenLogo.style.zIndex = "1000"; // Ensure it's on top of everything
-      fullscreenLogo.onclick = function() { // Close when clicking outside
-        fullscreenLogo.style.display = "none";
-      };
-  
-      // Create the circular logo image
-      var logoImage = document.createElement("img");
-      logoImage.src = "Pics/Logo.jpg";
-      logoImage.style.width = "200px"; // Adjust size as needed
-      logoImage.style.height = "200px"; // Adjust size as needed
-      logoImage.style.borderRadius = "50%"; // Make it circular
-      logoImage.style.objectFit = "cover"; // Maintain aspect ratio
-      logoImage.style.cursor = "default"; // Default cursor
-      fullscreenLogo.appendChild(logoImage);
-  
-      document.body.appendChild(fullscreenLogo);
-    }
-  
-    // Toggle full-screen mode
-    if (fullscreenLogo.style.display === "block") {
-      fullscreenLogo.style.display = "none";
-    } else {
-      fullscreenLogo.style.display = "flex"; // Show the logo
-    }
-  }
 
   /* Show the button when scrolling down */
 window.onscroll = function() {
@@ -93,4 +49,85 @@ function openSidebar() {
 function closeSidebar() {
   document.getElementById("sidebar").classList.remove("open");
 }
+
+
+
+let slideIndex = 1;
+let slideInterval; // Declare the interval variable
+showSlides(slideIndex);
+
+// Function to start the automatic slideshow
+function startSlideshow() {
+    slideInterval = setInterval(() => {
+        showSlides(slideIndex += 1); // Move to the next slide
+    }, 5000); // Change slide every 5 seconds (5000 milliseconds)
+}
+
+// Start the slideshow
+startSlideshow();
+
+// Next/previous controls
+function plusSlides(n) {
+    clearInterval(slideInterval); // Clear the existing interval
+    showSlides(slideIndex += n); // Show the next or previous slide
+    startSlideshow(); // Restart the slideshow timer
+}
+
+// Show the current slide
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlider");
+    
+    // Check if there are any slides
+    if (slides.length === 0) {
+        console.error("No slides found with the class 'mySlider'.");
+        return; // Exit the function if no slides are found
+    }
+
+    // Wrap around the slide index
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    // Show the current slide
+    slides[slideIndex - 1].style.display = "block";  
+}
+
+function filterMenu() {
+  const category = document.getElementById("category").value;
+  const items = document.querySelectorAll(".menu-item");
+
+  items.forEach(item => {
+      if (category === "all") {
+          item.classList.remove("hidden");
+      } else if (item.classList.contains(category)) {
+          item.classList.remove("hidden");
+      } else {
+          item.classList.add("hidden");
+      }
+  });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  // Get form data
+  const contactType = document.getElementById("contactType").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Log the data (you can replace this with an actual submission to a server)
+  console.log("Contact Type:", contactType);
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Message:", message);
+
+  // Optionally, reset the form
+  document.getElementById("contactForm").reset(); // Reset the form fields
+});
 
