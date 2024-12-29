@@ -12,6 +12,27 @@ header {
   padding: 20px 0; /* Padding for top and bottom */
 }
 
+@font-face {
+  font-family: 'Spicy Rice';
+  src: url('fonts/SpicyRice-Regular.ttf') format('truetype'); /* Adjust the path as necessary */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo-text {
+    font-family: 'Spicy Rice', cursive; /* Use the Spicy Rice font */
+    font-size: 2.5em; /* Adjust the size as needed */
+    color: white; /* Ensure the text color is appropriate */
+}
+
+.logo h1 {
+  font-family: 'Spicy Rice', cursive; /* Use the new font */
+  font-size: 2.5em; /* Adjust the size as needed */
+  color: white; /* Ensure the text color is appropriate */
+  margin: 0; /* Remove default margin */
+}
+
+
 header .container {
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between logo and nav */
@@ -34,7 +55,38 @@ header .container {
   color: white; /* Link color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Bold text */
+  padding: 5px;
 }
+
+
+.nav-linked a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  position: relative; /* Position relative for pseudo-element */
+}
+
+.nav-linked a:hover {
+  text-decoration: none; /* Keep text decoration none on hover */
+}
+
+.nav-linked a::after {
+  content: ''; /* Create a pseudo-element */
+  display: block; /* Make it a block element */
+  width: 100%; /* Full width */
+  height: 2px; /* Height of the underline */
+  background: white; /* Color of the underline */
+  position: absolute; /* Position it absolutely */
+  left: 0; /* Align to the left */
+  bottom: -5px; /* Position it below the text */
+  transform: scaleX(0); /* Start with scale 0 */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.nav-linked a:hover::after {
+  transform: scaleX(1); /* Scale to full width on hover */
+}
+
 
 /* Hamburger Icon */
 .menu-icon {
@@ -139,6 +191,10 @@ header .container {
   .nav-linked a {
     font-size: 1.2rem; /* Smaller font size for even smaller screens */
   }
+
+  .hero h1 {
+    font-size: 0.2em;
+  }
 }
 
 @media (min-width: 769px) {
@@ -162,6 +218,21 @@ header .container {
   color: white; /* Text color */
   text-align: center; /* Center text */
 }
+
+.logo-image {
+  max-width: 80px; /* Set a smaller width for the image */
+  height: 80px; /* Set a fixed height to make it round */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-color: #27242e;
+  border: 1px solid #27242e;
+  transition: transform 0.3s ease; /* Transition effect */
+}
+
+.logo-image:hover {
+  transform: scale(1.1); /* Scale the image when hovered */
+}
+
 
 .hero-container {
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
@@ -316,14 +387,14 @@ header .container {
 }
 
 .hero h1 {
-  font-size: 5em; /* Large font size for the title */
+  font-size: 3.4em; /* Large font size for the title */
   margin-bottom: 10px; /* Space below the title */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10); /* Horizontal offset, vertical offset, blur radius, color */
 }
 
 .hero p {
-  font-size: 1.5em; /* Medium font size for the description */
+  font-size: 1.7em; /* Medium font size for the description */
   margin-bottom: 20px; /* Space below the description */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10); /* Horizontal offset, vertical offset, blur radius, color */
@@ -549,6 +620,11 @@ h2 {
     margin-bottom: 2em; /* Space below the hero */
 }
 
+.promo-description {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
 .about-hero h2 {
     font-size: 2.5em; /* Title font size */
     margin-bottom: 10px; /* Space below the title */
@@ -558,6 +634,11 @@ h2 {
 .about-hero p {
     font-size: 1.2em; /* Subtitle font size */
     color: white; /* Subtitle color */
+}
+
+.promo-description {
+  font-size: 1.2em; /* Subtitle font size */
+  color: black; /* Subtitle color */
 }
 
 .about-content {
@@ -831,6 +912,7 @@ h2 {
   text-align: center; /* Center the heading */
   margin-bottom: 20px; /* Space below the heading */
   color: #27242e; /* Heading color */
+  font-size: 2.5em;
 }
 
 .form-group {
@@ -869,7 +951,36 @@ button:hover {
 
 
 
+.map {
+  padding: 4em 2em; /* Padding for the map section */
+  background-color: #27242e; /* Light background color */
+  text-align: center; /* Center align text */
+}
 
+.map-container {
+  max-width: 1200px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the container */
+  background-color: #d5d4dd; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 2em; /* Padding inside the container */
+}
+
+.map-container h2 {
+  color: #27242e; /* Dark color for the heading */
+  font-size: 2.5em; /* Font size for the heading */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+.map-container p {
+  color: #555; /* Gray color for the paragraph */
+  font-size: 1.2em; /* Font size for the paragraph */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+iframe {
+  border-radius: 8px; /* Rounded corners for the iframe */
+}
 
 
 
@@ -968,4 +1079,25 @@ footer {
   padding-bottom: 1px; /* Add or adjust this value */
   font-size: 0.9em;
   color: #d0d6d0;
+}
+
+.footer-hours {
+  background-color: #592e3d; /* Dark background color */
+  color: white; /* Text color */
+  padding: 15px; /* Padding around the box */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center align text */
+  margin-top: 20px; /* Space above the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.footer-hours h4 {
+  margin-bottom: 10px; /* Space below the heading */
+  font-size: 1.5em; /* Larger font size for the heading */
+  font-weight: bold; /* Bold text */
+}
+
+.footer-hours p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 1.2em; /* Font size for the hours */
 }

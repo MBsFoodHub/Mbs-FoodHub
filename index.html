@@ -14,7 +14,9 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>MB's Food Hub</h1>
+                <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
+                    <img src="Pics/Logo.jpg" alt="MB's Food Hub Logo" class="logo-image">
+                </a>
             </div>
             <nav>
                 <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
@@ -57,7 +59,7 @@
         <div class="slide" style="background-image: url('Pics/Shop.jpg');"></div>
     </div>
     <div class="hero-content">
-        <h1>Welcome to MB's Food Hub</h1>
+        <h1> <span class="logo-text">MB's Food Hub</span></h1>
         <p>Your destination for delicious and affordable meals!</p>
         <a href="#menu" class="hero-btn">Explore Our Menu</a>
     </div>
@@ -70,8 +72,8 @@
     
     <div class="promo-container">
         <h2>Promos</h2>
-        <div class="about-hero">
-            <p style="color: black;">Discover the story behind MB's Food Hub</p>
+        <div class="promo-description">
+            <p>Join us at MB's Food Hub for exclusive offers and delicious deals! Our promos are designed to bring you the best flavors at unbeatable prices.</p>
         </div>
         <div class="promo-grid">
             <a href="#promos" class="promo-item" onclick="openLightbox('Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png')">
@@ -122,7 +124,9 @@
         <!-- New Image and Intro Text -->
         <!-- New Image and Intro Text -->
 <div class="about-intro">
-    <img src="Pics/Logo.jpg" alt="Intro Image" class="intro-image"> <!-- Replace with your image path -->
+    <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
+        <img src="Pics/Logo.jpg" alt="Intro Image" class="intro-image">
+    </a>
     <h3>Introduction</h3>
     <p>"Step into our place under the mango tree, where the aroma of freshly brewed coffee fills the air." Known for our best pork and chicken sisig, we also serve rice meals, snacks & coffee.</p>
     <p>Just Munch a Bunch with us here at MB's Food Hub & Cafe</p>
@@ -173,22 +177,22 @@
     <h2>Gallery</h2>
     <div class="gallery-container">
         <div class="gallery-item" onclick="openLightbox('Foods/image1.jpg')">
-            <img src="Foods/401561861_331399962837228_4688801543065575241_n.jpg" alt="Gallery Image 1">
+            <img src="Pics/ShopPics/325434776_557739932708413_1721341352422140346_n.jpg" alt="Gallery Image 1">
         </div>
         <div class="gallery-item" onclick="openLightbox('Foods/image2.jpg')">
-            <img src="Foods/405928736_331400069503884_8746708088270479417_n.jpg" alt="Gallery Image 2">
+            <img src="Pics/ShopPics/325778423_554178946612466_2714534547201684385_n.jpg" alt="Gallery Image 2">
         </div>
         <div class="gallery-item" onclick="openLightbox('Foods/image3.jpg')">
-            <img src="Foods/405928736_331400069503884_8746708088270479417_n.jpg" alt="Gallery Image 3">
+            <img src="Pics/ShopPics/358043666_258718036772088_7981705999836249522_n.jpg" alt="Gallery Image 3">
         </div>
         <div class="gallery-item" onclick="openLightbox('Foods/image4.jpg')">
-            <img src="Foods/405928736_331400069503884_8746708088270479417_n.jpg" alt="Gallery Image 4">
+            <img src="Pics/ShopPics/381666298_297551742888717_4472328310536696207_n.jpg" alt="Gallery Image 4">
         </div>
         <div class="gallery-item" onclick="openLightbox('Foods/image5.jpg')">
-            <img src="Foods/401561861_331399962837228_4688801543065575241_n.jpg" alt="Gallery Image 5">
+            <img src="Pics/ShopPics/366746504_277291474914744_6592459616185513717_n.jpg" alt="Gallery Image 5">
         </div>
         <div class="gallery-item" onclick="openLightbox('Foods/image6.jpg')">
-            <img src="Foods/401561861_331399962837228_4688801543065575241_n.jpg" alt="Gallery Image 6">
+            <img src="Pics/ShopPics/358060868_258718096772082_7341728869133325962_n.jpg" alt="Gallery Image 6">
         </div>
     </div>
 </section>
@@ -235,7 +239,23 @@
 
 
 
-
+<!-- Google Map Section -->
+<section class="map" id="map">
+    <div class="map-container">
+        <h2>Our Location</h2>
+        <p>Visit us at our store to enjoy delicious meals!</p>
+        <a href="https://www.google.com/maps/place/Your+Store+Name" target="_blank" rel="noopener noreferrer">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!4v1735399154528!6m8!1m7!1sB6qBcQDuUdiOH363pnEKUw!2m2!1d11.59445725815928!2d122.7503185799618!3f12.221598484024753!4f-11.449115295984285!5f0.7820865974627469" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </a>
+    </div>
+</section>
 
 
 
@@ -244,12 +264,13 @@
 <footer>
     <div class="footer-content" id="footer">
         <div class="footer-logo">
-            <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
+            <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
+                <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
+            </a>
             <h1>MB's Food Hub</h1>
         </div>
         
         <div class="footer-info">
-            <!-- Contact Information -->
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
@@ -257,12 +278,15 @@
                 <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
                 <p><a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Follow</a> or <a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a></p>
             </div>
-            
-            
         </div>
         
-        <!-- Moved Follow Us Section -->
-       
+        <!-- Redesigned "WE ARE OPEN" Box -->
+        <div class="footer-hours">
+            <h4>WE ARE OPEN</h4>
+            <div> <i class="fas fa-clock"></i> <!-- Clock icon --> </div>
+            <p>Monday - Saturday</p>
+            <p>9:00 AM to 9:00 PM</p>
+        </div>
     </div>
     
     <div class="footer-bottom">
