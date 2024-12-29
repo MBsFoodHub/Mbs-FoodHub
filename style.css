@@ -9,7 +9,7 @@
 header {
   background-color: #27242e; /* Dark background color */
   color: white; /* Text color */
-  padding: 20px 0; /* Padding for top and bottom */
+  padding: 10px 0; /* Padding for top and bottom */
 }
 
 @font-face {
@@ -403,18 +403,78 @@ header .container {
 
 
 
+/* Top Picks Section Styles */
+#top-picks {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background for the section */
+  margin-bottom: 20px; /* Space below the section */
+}
 
+#top-picks h2 {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #32a917; /* Green color for the heading */
+}
 
+.top-picks-box {
+  border: 1px solid #ccc; /* Border for the box */
+  border-radius: 8px; /* Rounded corners for the box */
+  padding: 20px; /* Padding inside the box */
+  background-color: #fff; /* White background for the box */
+}
 
+.top-picks-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.top-pick {
+  text-align: center; /* Center align text */
+  margin: 10px; /* Space between items */
+  flex: 1 1 30%; /* Allow items to grow and shrink, with a base width of 30% */
+  max-width: 200px; /* Set a maximum width for each item */
+}
+
+.top-pick-box {
+  border: 1px solid #ddd; /* Light border around each box */
+  border-radius: 8px; /* Rounded corners for the box */
+  padding: 10px; /* Padding inside the box */
+  background-color: #fff; /* White background for each box */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.top-pick-box:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.top-pick-image {
+  width: 100%; /* Full width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.top-pick-text {
+  margin-top: 10px; /* Space above the text */
+  font-size: 16px; /* Font size for item names */
+  color: #333; /* Dark color for text */
+}
+
+.top-pick-price {
+  margin-top: 5px; /* Space above the price */
+  font-size: 14px; /* Font size for price */
+  color: #666; /* Gray color for price */
+}
 
 
 
 
 #menu {
   max-width: 1200px; /* Limit the width for better readability */
-  margin: 0 auto; /* Center the menu section */
+  margin: 50px auto; /* Center the menu section */
   padding: 20px; /* Padding around the menu */
-  background-color: #fff; /* White background for the menu */
+  background-color: #d5d4dd; /* White background for the menu */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -424,10 +484,7 @@ h2 {
   color: #32a917; /* Green color for the heading */
 }
 
-.filter {
-  margin-bottom: 20px;
-  text-align: center; /* Center the filter */
-}
+
 
 .menu-items {
   display: grid; /* Use grid layout */
@@ -452,9 +509,12 @@ h2 {
 }
 
 .menu-image {
-  width: 100%; /* Full width for images */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Rounded corners for images */
+  max-width: 100%; /* Ensure the image does not exceed the width of its container */
+  max-height: 150px; /* Set a maximum height for the images */
+  width: auto; /* Allow width to adjust automatically */
+  height: auto; /* Allow height to adjust automatically */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .menu-text {
@@ -467,8 +527,43 @@ h2 {
   display: none; /* Hide items that don't match the filter */
 }
 
+.menu-category {
+  border: 1px solid #ccc; /* Border for the category box */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  margin-bottom: 20px; /* Space between categories */
+  display: block; /* Initially hide categories */
+  background-color: #d5d4dd;
+}
 
+.menu-category h3 {
+  margin-bottom: 10px; /* Space below the category title */
+}
 
+/* Filter Container Styles */
+.filter-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between filters */
+  margin-bottom: 20px; /* Space below filters */
+}
+
+/* Filter Styles */
+.filter {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.filter label {
+  margin-right: 5px; /* Space between label and dropdown */
+  font-size: 14px; /* Smaller font size for labels */
+}
+
+.filter select {
+  padding: 5px; /* Smaller padding for dropdowns */
+  border: 1px solid #ccc; /* Border for dropdowns */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Smaller font size for dropdown s */
+}
 
 
 

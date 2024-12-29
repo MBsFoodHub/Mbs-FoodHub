@@ -97,20 +97,6 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";  
 }
 
-function filterMenu() {
-  const category = document.getElementById("category").value;
-  const items = document.querySelectorAll(".menu-item");
-
-  items.forEach(item => {
-      if (category === "all") {
-          item.classList.remove("hidden");
-      } else if (item.classList.contains(category)) {
-          item.classList.remove("hidden");
-      } else {
-          item.classList.add("hidden");
-      }
-  });
-}
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent default form submission
@@ -130,6 +116,53 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   // Optionally, reset the form
   document.getElementById("contactForm").reset(); // Reset the form fields
 });
+
+
+// Function to filter menu items based on category
+function filterMenu() {
+  const category = document.getElementById("category").value;
+  const foodCategory = document.querySelector('.food-category');
+  const beverageCategory = document.querySelector('.beverage-category');
+
+  if (category === "all") {
+      foodCategory.style.display = "block"; // Show food category
+      beverageCategory.style.display = "block"; // Show beverage category
+  } else if (category === "food") {
+      foodCategory.style.display = "block"; // Show food category
+      beverageCategory.style.display = "none"; // Hide beverage category
+  } else if (category === "beverages") {
+      foodCategory.style.display = "none"; // Hide food category
+      beverageCategory.style.display = "block"; // Show beverage category
+  }
+}
+
+// Function to filter menu items based on price
+function filterPrice() {
+  const priceRange = document.getElementById("price").value;
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  menuItems.forEach(item => {
+      const price = parseFloat(item.getAttribute('data-price'));
+
+      if (priceRange === "all") {
+          item.style.display = "block"; // Show all items
+      } else if (priceRange === "low" && price < 10) {
+          item.style.display = "block"; // Show low-priced items
+      } else if (priceRange === "medium" && price >= 10 && price <= 20) {
+          item.style.display = "block"; // Show medium-priced items
+      } else if (priceRange === "high" && price > 20) {
+          item.style.display = "block"; // Show high-priced items
+      } else {
+          item.style.display = "none"; // Hide items that don't match the filter
+      }
+  });
+}
+
+// Call filterMenu on page load to show the default category
+window.onload = function() {
+  filterMenu(); // Show all items by default
+};
+
 
 
 

@@ -22,12 +22,12 @@
                     &#9776; <!-- Hamburger icon -->
                 </label>
                 <ul class="nav-linked">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#promos">Promos</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#delivery">Delivery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#promos">Promos</a></li>
+                    <li><a href="index-menu.html">Menu</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#delivery">Delivery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,12 +37,12 @@
     <div id="sidebar" class="sidebar">
         <button class="close-btn" onclick="closeSidebar()">×</button>
         <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#promos">Promos</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#delivery">Delivery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#promos">Promos</a></li>
+            <li><a href="index-menu.html">Menu</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#delivery">Delivery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
     <!-- Back to Top Button -->
@@ -50,42 +50,31 @@
     ↑
 </button>
 
-
-<section id="menu">
-    <h2>Menu</h2>
-    <div class="filter">
-        <label for="category">Choose a category:</label>
-        <select id="category" onchange="filterMenu()">
-            <option value="all">All</option>
-            <option value="food">Food</option>
-            <option value="beverages">Beverages</option>
-        </select>
-    </div>
-    
-    <div class="menu-items">
-        <div class="menu-item food">
-            <img src="Foods/pizza.jpg" alt="Pizza" class="menu-image">
-            <div class="menu-text">Pizza</div>
-        </div>
-        <div class="menu-item food">
-            <img src="Foods/burger.jpg" alt="Burger" class="menu-image">
-            <div class="menu-text">Burger</div>
-        </div>
-        <div class="menu-item food">
-            <img src="Foods/pasta.jpg" alt="Pasta" class="menu-image">
-            <div class="menu-text">Pasta</div>
-        </div>
-        <div class="menu-item beverages">
-            <img src="Foods/coffee.jpg" alt="Coffee" class="menu-image">
-            <div class="menu-text">Coffee</div>
-        </div>
-        <div class="menu-item beverages">
-            <img src="Foods/tea.jpg" alt="Tea" class="menu-image">
-            <div class="menu-text">Tea</div>
-        </div>
-        <div class="menu-item beverages">
-            <img src="Foods/juice.jpg" alt="Juice" class="menu-image">
-            <div class="menu-text">Juice</div>
+<section id="top-picks">
+    <h2>Top Picks</h2>
+    <div class="top-picks-box"> <!-- New container for the top picks -->
+        <div class="top-picks-container">
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/pizza.jpg" alt="Top Pick Pizza" class="top-pick-image">
+                    <div class="top-pick-text">Pizza</div>
+                    <div class="top-pick-price">$8</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/burger.jpg" alt="Top Pick Burger" class="top-pick-image">
+                    <div class="top-pick-text">Burger</div>
+                    <div class="top-pick-price">$12</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/sushi.jpg" alt="Top Pick Sushi" class="top-pick-image">
+                    <div class="top-pick-text">Sushi</div>
+                    <div class="top-pick-price">$20</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -94,9 +83,88 @@
 
 
 
+<section id="menu">
+    <h2>Menu</h2>
+    <div class="filter-container">
+        <!-- Category Filter -->
+        <div class="filter">
+            <label for="category">Choose a category:</label>
+            <select id="category" onchange="filterMenu()">
+                <option value="all">All</option>
+                <option value="food">Foods</option>
+                <option value="beverages">Beverages</option>
+            </select>
+        </div>
+        
+        <!-- Price Filter -->
+        <div class="filter">
+            <label for="price">Choose a price range:</label>
+            <select id="price" onchange="filterPrice()">
+                <option value="all">All</option>
+                <option value="low">Low (Under $10)</option>
+                <option value="medium">Medium ($10 - $20)</option>
+                <option value="high">High (Above $20)</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Foods Category -->
+    <div class="menu-category food-category">
+        <h3>Foods</h3>
+        <div class="menu-items">
+            <div class="menu-item food" data-price="8">
+                <img src="Foods/pizza.jpg" alt="Pizza" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Pizza</div>
+                    <div class="menu-price">$8</div>
+                </div>
+            </div>
+            <div class="menu-item food" data-price="12">
+                <img src="Foods/burger.jpg" alt="Burger" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Burger</div>
+                    <div class="menu-price">$12</div>
+                </div>
+            </div>
+            <div class="menu-item food" data-price="15">
+                <img src="Foods/pasta.jpg" alt="Pasta" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Pasta</div>
+                    <div class="menu-price">$15</div>
+                </div>
+            </div>
+            <!-- More menu items... -->
+        </div>
+    </div>
 
-
-
-
+    <!-- Beverages Category -->
+    <div class="menu-category beverage-category">
+        <h3>Beverages</h3>
+        <div class="menu-items">
+            <div class="menu-item beverages" data-price="5">
+                <img src="Foods/coffee.jpg" alt="Coffee" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Coffee</div>
+                    <div class="menu-price">$5</div>
+                </div>
+            </div>
+            <div class="menu-item beverages" data-price="3">
+                <img src="Foods/tea.jpg" alt="Tea" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Tea</div>
+                    <div class="menu-price">$3</div>
+                </div>
+            </div>
+            <div class="menu-item beverages" data-price="4">
+                <img src="Foods/juice.jpg" alt="Juice" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Juice</div>
+                    <div class="menu-price">$4</div>
+                </div>
+            </div>
+            <!-- More menu items... -->
+        </div>
+    </div>
+</section>
 </body>
 </html>
