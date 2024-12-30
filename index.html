@@ -7,16 +7,16 @@
         <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
+        
     </head>
 <body>
     <!-- Header with logo and navigation -->
     <header>
         <div class="container">
-            <div class="logo">
-                <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
-                    <img src="Pics/Logo.jpg" alt="MB's Food Hub Logo" class="logo-image">
-                </a>
+            <div class="logo" id="logo" onclick="toggleLogo()">
+                <img src="Pics/Logo.jpg" alt="MB's Food Hub Logo" class="logo-image" id="logo-image">
+                <span id="logo-text" style="display: none;"><h1>MB's Food Hub</h1></span> <!-- Hidden by default -->
             </div>
             <nav>
                 <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
@@ -122,7 +122,7 @@
         </div>
         
         <!-- New Image and Intro Text -->
-        <!-- New Image and Intro Text -->
+
 <div class="about-intro">
     <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
         <img src="Pics/Logo.jpg" alt="Intro Image" class="intro-image">
@@ -158,6 +158,10 @@
             <div class="mySlider fade">
                 <img src="Foods/409457858_336633462313878_1416990698421374237_n.jpg" alt="Interior Image 3">
             </div>
+
+            <div class="mySlider fade">
+                <img src="Foods//406173666_331399939503897_9120544451973918185_n.jpg" alt="Interior Image 3">
+            </div>
             <!-- Add more slides as needed -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -176,22 +180,22 @@
 <section class="gallery" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-container">
-        <div class="gallery-item" onclick="openLightbox('Foods/image1.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/325434776_557739932708413_1721341352422140346_n.jpg')">
             <img src="Pics/ShopPics/325434776_557739932708413_1721341352422140346_n.jpg" alt="Gallery Image 1">
         </div>
-        <div class="gallery-item" onclick="openLightbox('Foods/image2.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/325778423_554178946612466_2714534547201684385_n.jpg')">
             <img src="Pics/ShopPics/325778423_554178946612466_2714534547201684385_n.jpg" alt="Gallery Image 2">
         </div>
-        <div class="gallery-item" onclick="openLightbox('Foods/image3.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/358043666_258718036772088_7981705999836249522_n.jpg')">
             <img src="Pics/ShopPics/358043666_258718036772088_7981705999836249522_n.jpg" alt="Gallery Image 3">
         </div>
-        <div class="gallery-item" onclick="openLightbox('Foods/image4.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/381666298_297551742888717_4472328310536696207_n.jpg')">
             <img src="Pics/ShopPics/381666298_297551742888717_4472328310536696207_n.jpg" alt="Gallery Image 4">
         </div>
-        <div class="gallery-item" onclick="openLightbox('Foods/image5.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/366746504_277291474914744_6592459616185513717_n.jpg')">
             <img src="Pics/ShopPics/366746504_277291474914744_6592459616185513717_n.jpg" alt="Gallery Image 5">
         </div>
-        <div class="gallery-item" onclick="openLightbox('Foods/image6.jpg')">
+        <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/358060868_258718096772082_7341728869133325962_n.jpg')">
             <img src="Pics/ShopPics/358060868_258718096772082_7341728869133325962_n.jpg" alt="Gallery Image 6">
         </div>
     </div>
@@ -206,14 +210,13 @@
 
 
 
-<!-- Contact Us Section -->
 <section class="contact" id="contact">
     <div class="contact-container">
         <h2>Contact Us</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xnnnzzwk" method="POST">
             <div class="form-group">
                 <label for="contactType">Select Contact Type:</label>
-                <select id="contactType" name="contactType" required>
+                <select id="contactType" name="contactType" required onchange="toggleInputFields()">
                     <option value="" disabled selected>Select an option</option>
                     <option value="feedback">Feedback</option>
                     <option value="report">Report</option>
@@ -222,17 +225,28 @@
             </div>
             <div class="form-group">
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required disabled>
             </div>
             <div class="form-group">
                 <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required disabled>
             </div>
             <div class="form-group">
                 <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required disabled></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <div class="form-group" id="ratingContainer" style="display: none;">
+                <label for="rating">Rate Us:</label>
+                <select id="rating" name="rating">
+                    <option value="" disabled selected>Select a rating</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <button type="submit" disabled>Send Message</button>
         </form>
     </div>
 </section>

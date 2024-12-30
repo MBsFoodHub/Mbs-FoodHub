@@ -9,6 +9,14 @@ function closeLightbox() {
 }
 
 
+
+
+
+
+
+
+
+
 // Show the button when the user scrolls down 20px from the top
 window.onscroll = function() {
     toggleBackToTopBtn();
@@ -42,6 +50,16 @@ window.onscroll = function() {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
 }
@@ -49,6 +67,18 @@ function openSidebar() {
 function closeSidebar() {
   document.getElementById("sidebar").classList.remove("open");
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,24 +128,125 @@ function showSlides(n) {
 }
 
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent default form submission
 
-  // Get form data
-  const contactType = document.getElementById("contactType").value;
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
 
-  // Log the data (you can replace this with an actual submission to a server)
-  console.log("Contact Type:", contactType);
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Message:", message);
 
-  // Optionally, reset the form
-  document.getElementById("contactForm").reset(); // Reset the form fields
-});
+
+    // Function to toggle input fields based on selected contact type
+    function toggleInputFields() {
+      const contactType = document.getElementById("contactType").value;
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const messageField = document.getElementById("message");
+      const submitButton = document.querySelector("button[type='submit']");
+      const ratingContainer = document.getElementById("ratingContainer");
+  
+      if (contactType) {
+          nameField.disabled = false;
+          emailField.disabled = false;
+          messageField.disabled = false;
+          submitButton.disabled = false; // Enable the submit button
+  
+          // Show rating container if feedback is selected
+          if (contactType === "feedback") {
+              ratingContainer.style.display = "block"; // Show rating input
+          } else {
+              ratingContainer.style.display = "none"; // Hide rating input
+          }
+      } else {
+          nameField.disabled = true;
+          emailField.disabled = true;
+          messageField.disabled = true;
+          submitButton.disabled = true; // Disable the submit button
+          ratingContainer.style.display = "none"; // Hide rating input
+      }
+  }
+  
+  // Prevent default form submission and handle it with fetch
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+  
+      // Get form data
+      const contactType = document.getElementById("contactType").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const rating = document.getElementById("rating").value;
+  
+      // Log the data (or send it to Formspree using fetch)
+      console.log("Contact Type:", contactType);
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Message:", message);
+      console.log("Rating:", rating);
+  
+      // Send the data to Formspree using fetch
+      fetch("https://formspree.io/f/xnnnzzwk", {
+      method: "POST",
+      headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          contactType: contactType,
+          name: name,
+          email: email,
+          message: message,
+          rating: rating
+      })
+  }).then(response => {
+      if (response.ok) {
+          alert("Your message has been sent successfully! Thank you for your feedback."); // Custom message
+          document.getElementById("contactForm").reset(); // Reset the form
+      } else {
+          alert("There was a problem sending your message. Please try again.");
+      }
+  }).catch(error => {
+      alert("There was a problem sending your message. Please check your internet connection.");
+  });
+  });
+
+  function toggleLogo() {
+    const logoImage = document.getElementById("logo-image");
+    const logoText = document.getElementById("logo-text");
+
+    if (logoImage.style.display === "none") {
+        logoImage.style.display = "block"; // Show logo
+        logoText.style.display = "none"; // Hide text
+    } else {
+        logoImage.style.display = "none"; // Hide logo
+        logoText.style.display = "block"; // Show text
+    }
+}
+
+function openChat() {
+    // Implement your chat functionality here
+    alert("Chat feature is not implemented yet."); // Placeholder for chat functionality
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Function to filter menu items based on category
@@ -162,7 +293,6 @@ function filterPrice() {
 window.onload = function() {
   filterMenu(); // Show all items by default
 };
-
 
 
 

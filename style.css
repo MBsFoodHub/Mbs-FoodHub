@@ -9,7 +9,7 @@
 header {
   background-color: #27242e; /* Dark background color */
   color: white; /* Text color */
-  padding: 10px 0; /* Padding for top and bottom */
+  padding: 20px 0; /* Padding for top and bottom */
 }
 
 @font-face {
@@ -23,13 +23,17 @@ header {
     font-family: 'Spicy Rice', cursive; /* Use the Spicy Rice font */
     font-size: 2.5em; /* Adjust the size as needed */
     color: white; /* Ensure the text color is appropriate */
+    
 }
+
+
 
 .logo h1 {
   font-family: 'Spicy Rice', cursive; /* Use the new font */
   font-size: 2.5em; /* Adjust the size as needed */
   color: white; /* Ensure the text color is appropriate */
   margin: 0; /* Remove default margin */
+  cursor: pointer; /* Change cursor to pointer when hovering over the logo */
 }
 
 
@@ -192,9 +196,9 @@ header .container {
     font-size: 1.2rem; /* Smaller font size for even smaller screens */
   }
 
-  .hero h1 {
-    font-size: 0.2em;
-  }
+  
+
+  
 }
 
 @media (min-width: 769px) {
@@ -227,6 +231,7 @@ header .container {
   border-color: #27242e;
   border: 1px solid #27242e;
   transition: transform 0.3s ease; /* Transition effect */
+  cursor: pointer; /* Change cursor to pointer when hovering over the logo */
 }
 
 .logo-image:hover {
@@ -240,10 +245,7 @@ header .container {
   border-radius: 10px; /* Rounded corners */
 }
 
-.hero h1 {
-  font-size: 3em; /* Large font size for the title */
-  margin-bottom: 10px; /* Space below the title */
-}
+
 
 .hero p {
   font-size: 1.5em; /* Medium font size for the description */
@@ -387,7 +389,7 @@ header .container {
 }
 
 .hero h1 {
-  font-size: 3.4em; /* Large font size for the title */
+  font-size: 2.8em; /* Large font size for the title */
   margin-bottom: 10px; /* Space below the title */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10); /* Horizontal offset, vertical offset, blur radius, color */
@@ -403,10 +405,11 @@ header .container {
 
 
 
+
 /* Top Picks Section Styles */
 #top-picks {
   padding: 20px;
-  background-color: #f4f4f4; /* Light background for the section */
+  background-color: #d5d4dd; /* Light background for the section */
   margin-bottom: 20px; /* Space below the section */
 }
 
@@ -468,6 +471,10 @@ header .container {
 }
 
 
+body{
+  background-color: #27242e;
+}
+
 
 
 #menu {
@@ -482,6 +489,8 @@ header .container {
 h2 {
   text-align: center; /* Center the heading */
   color: #32a917; /* Green color for the heading */
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
 
@@ -556,6 +565,7 @@ h2 {
 .filter label {
   margin-right: 5px; /* Space between label and dropdown */
   font-size: 14px; /* Smaller font size for labels */
+  margin-left: 10px;
 }
 
 .filter select {
@@ -564,8 +574,6 @@ h2 {
   border-radius: 4px; /* Rounded corners */
   font-size: 14px; /* Smaller font size for dropdown s */
 }
-
-
 
 
 
@@ -762,6 +770,10 @@ h2 {
       width: 100%; /* Full width for better readability on small screens */
       margin: 1em 0; /* Add margin for spacing between stacked items */
   }
+
+  .hero h1 {
+    font-size: 2.2em;
+  }
 }
 
 .about-text h3 {
@@ -834,6 +846,7 @@ h2 {
   flex: 1 1 calc(33.33% - 20px); /* 3 items per row with gap */
   max-width: calc(33.33% - 20px); /* Max width for each item */
   cursor: pointer; /* Pointer cursor for clickable items */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .gallery-item img {
@@ -844,12 +857,7 @@ h2 {
 }
 
 /* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-  .gallery-item {
-      flex: 1 1 calc(50% - 20px); /* 2 items per row on small screens */
-      max-width: calc(50% - 20px); /* Max width for each item */
-  }
-}
+
 .gallery-item {
   flex: 1 1 calc(33.33% - 20px); /* 3 items per row with gap */
   max-width: calc(33.33% - 20px); /* Max width for each item */
@@ -907,6 +915,14 @@ h2 {
       width: 100%; /* Ensure both take full width */
       margin-bottom: 20px; /* Space between stacked items */
   }
+
+  .gallery-item {
+    flex: 1 1 100%; /* 1 item per row on small screens */
+    max-width: 100%; /* Max width for each item */
+}
+
+
+
 }
 
 .interiors-slideshow {
@@ -1114,6 +1130,8 @@ footer {
 
 .footer-logo h1 {
   font-size: 2.5em;
+  font-family: 'Spicy Rice', cursive; /* Use the Spicy Rice font */
+
 }
 
 .footer-logo-image {
