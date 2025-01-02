@@ -12,6 +12,27 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
         
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Restaurant, Food Hub",
+              "name": "MB's Food Hub",
+              "image": "https://mbsfoodhub.shop/Pics/Logo.jpg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Arnaldo Blvd",
+                "addressLocality": "Roxas City",
+                "postalCode": "5800",
+                "addressCountry": "Philippines"
+              },
+              "telephone": "(123) 456-7890",
+              "openingHours": "Mo-Sa 09:00-21:00",
+              "menu": "https://mbsfoodhub.shop/index-menu.html"
+            }
+            </script>
+
+
+
     </head>
 <body>
     <!-- Header with logo and navigation -->
@@ -166,8 +187,8 @@
                 <img src="Pics/Interiors/406173666_331399939503897_9120544451973918185_n.jpg" alt="Interior Image 3">
             </div>
             <!-- Add more slides as needed -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <a class="prev" href="#prev-slide" onclick="plusSlides(-1)">
+                <a class="next" href="#next-slide" onclick="plusSlides(1)">
         </div>
         <div class="interiors-description">
             <h2>Our Interiors</h2>
