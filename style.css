@@ -7,10 +7,16 @@
 
 /* Header Styles */
 header {
-  background-color: #27242e; /* Dark background color */
-  color: white; /* Text color */
-  padding: 20px 0; /* Padding for top and bottom */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the header background */
+  background-color: rgba(47, 43, 43, 0.5); /* Add a semi-transparent white background */
+  position: fixed; /* Keep the header fixed at the top */
+  width: 100%; /* Ensure the header spans the full width */
+  z-index: 1000; /* Ensure the header stays above other content */
+  padding: 10px 0; /* Adjust padding as needed */
+  transition: top 0.5s ease-in-out;
 }
+
+
 
 @font-face {
   font-family: 'Spicy Rice';
@@ -21,7 +27,7 @@ header {
 
 .logo-text {
     font-family: 'Spicy Rice', cursive; /* Use the Spicy Rice font */
-    font-size: 2.5em; /* Adjust the size as needed */
+    font-size: 3.3em; /* Adjust the size as needed */
     color: white; /* Ensure the text color is appropriate */
     
 }
@@ -49,6 +55,7 @@ header .container {
 .nav-linked {
   list-style: none; /* Remove bullet points */
   display: flex; /* Flexbox for horizontal layout */
+  background-color: transparent;
 }
 
 .nav-linked li {
@@ -98,13 +105,7 @@ header .container {
   font-size: 30px; /* Size of the hamburger icon */
   cursor: pointer; /* Pointer cursor */
 }
-/* Navigation Links */
-.nav-links {
-  display: flex; /* Show links in a row */
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -124,6 +125,8 @@ header .container {
       display: flex; /* Show the links when the sidebar is open */
       flex-direction: column; /* Stack links vertically */
   }
+
+  
   
 }
 
@@ -134,6 +137,18 @@ header .container {
 
   .nav-links {
       display: flex; /* Show the navigation links in a row on larger screens */
+  }
+
+  .hero h1 {
+    font-size: 3.3em; /* Adjust the size as needed */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text */
+  }
+
+  .hero p {
+    font-size: 1.5em; /* Adjust the size as needed */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the text */
   }
 
 
@@ -225,6 +240,10 @@ header .container {
   align-items: center; /* Center vertically */
   color: white; /* Text color */
   text-align: center; /* Center text */
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Position relative for absolute children */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow */
 }
 
 .logo-image {
@@ -344,14 +363,7 @@ header .container {
 }
 
 /* Hero Section Styles */
-.hero {
-  position: relative;
-  height: 400px; /* Set height for the hero section */
-  overflow: hidden; /* Hide overflow */
-  position: relative; /* Position relative for absolute children */
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Hide overflow */
-}
+
 
 /* Background Slideshow */
 .background-slideshow {
@@ -410,11 +422,28 @@ header .container {
 
 
 
+
+
+
+
+.top-picks-box {
+  background-color: #fff; /* Background color of the box */
+  border: 1px solid #ddd; /* Border around the box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside the box */
+  margin: 20px auto; /* Center the box and add margin */
+  max-width: 1200px; /* Limit the width of the box */
+  padding-top: 80vh;
+}
+
 /* Top Picks Section Styles */
 #top-picks {
   padding: 20px;
-  background-color: #d5d4dd; /* Light background for the section */
+  background-color: #27242e; /* Light background for the section */
   margin-bottom: 20px; /* Space below the section */
+ padding-top: 15vh;
+  
 }
 
 #top-picks h2 {
@@ -427,12 +456,12 @@ header .container {
   border: 1px solid #ccc; /* Border for the box */
   border-radius: 8px; /* Rounded corners for the box */
   padding: 20px; /* Padding inside the box */
-  background-color: #fff; /* White background for the box */
+  background-color: #d5d4dd; /* White background for the box */
 }
 
 .top-picks-container {
   display: flex; /* Use flexbox for layout */
-  justify-content: space-around; /* Space items evenly */
+  justify-content: center; /* Space items evenly */
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
@@ -440,7 +469,7 @@ header .container {
   text-align: center; /* Center align text */
   margin: 10px; /* Space between items */
   flex: 1 1 30%; /* Allow items to grow and shrink, with a base width of 30% */
-  max-width: 200px; /* Set a maximum width for each item */
+  max-width: 250px; /* Set a maximum width for each item */
 }
 
 .top-pick-box {
@@ -629,7 +658,7 @@ h2 {
 }
 
 .promo-container {
-  background-color: #d0d0d0; /* Light background for the container */
+  background-color: #d5d4dd; /* Light background for the container */
   padding: 2em;
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px #090909; /* Subtle shadow */
@@ -776,7 +805,11 @@ h2 {
   }
 
   .hero h1 {
-    font-size: 2.2em;
+    font-size: 1.3em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
   }
 
   
@@ -927,8 +960,25 @@ h2 {
     max-width: 100%; /* Max width for each item */
 }
 
+@media (max-width: 768px) {
+  .top-pick {
+      flex: 1 1 50%;
+      max-width: 300px;
+  }
+}
 
-
+@media (max-width: 480px) {
+  .top-pick {
+      flex: 1 1 100%;
+      max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .footer-hours {
+      margin: 0 auto;
+      text-align: center;
+  }
+}
 
 }
 

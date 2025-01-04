@@ -316,3 +316,17 @@ window.onload = function() {
 
 
 
+const header = document.querySelector('header');
+const scrollPosition = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScrollPosition = window.scrollY;
+  if (currentScrollPosition > scrollPosition) {
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
+  }
+  scrollPosition = currentScrollPosition;
+});
+
+

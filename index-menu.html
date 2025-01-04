@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MB's Food Hub</title>
-        <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MB's Food Hub - Your destination for delicious and affordable meals in Roxas City. Best sisig, rice meals, snacks, and coffee.">
+    <meta name="keywords" content="MB's Food Hub, Roxas City, Roxas City Food Hub, Family friendly food hub in roxas city, Budget friendly Food Hubs in roxas city, Nature Friendly Food Hubs, Local food hubs in roxas city, Food Hubs">
+    <meta name="author" content="MB's Food Hub">
+    <title>MB's Food Hub - Best Sisig and Affordable Meals in Roxas City</title>
+    <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Restaurant, Food Hub",
+          "name": "MB's Food Hub",
+          "image": "https://mbsfoodhub.shop/Pics/Logo.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Arnaldo Blvd",
+            "addressLocality": "Roxas City",
+            "postalCode": "5800",
+            "addressCountry": "Philippines"
+          },
+          "telephone": "(123) 456-7890",
+          "openingHours": "Mo-Sa 09:00-21:00",
+          "menu": "https://mbsfoodhub.shop/index-menu.html"
+        }
+        </script>
+
+
+
+</head>
 <body>
     <!-- Header with logo and navigation -->
     <header>
@@ -43,7 +68,7 @@
             <li><a href="index.html#promos">Promos</a></li>
             <li><a href="index-menu.html">Menu</a></li>
             <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#delivery">Delivery</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
@@ -52,29 +77,68 @@
     ↑
 </button>
 
+<section class="extra-space">
+
+</section>
+
 <section id="top-picks">
-    <h2>Top Picks</h2>
-    <div class="top-picks-box"> <!-- New container for the top picks -->
+    <div class="top-picks-box">
+        <h2>Compiled Menu</h2>
         <div class="top-picks-container">
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/pizza.jpg" alt="Top Pick Pizza" class="top-pick-image">
-                    <div class="top-pick-text">Pizza</div>
+                    <img src="Foods/Menu/1.png" alt="Top Pick Pizza" class="top-pick-image">
+                    <div class="top-pick-text">Snacks & PicaPica</div>
                     <div class="top-pick-price">$8</div>
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/burger.jpg" alt="Top Pick Burger" class="top-pick-image">
+                    <img src="Foods/Menu/2.png" alt="Top Pick Burger" class="top-pick-image">
                     <div class="top-pick-text">Burger</div>
                     <div class="top-pick-price">$12</div>
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/sushi.jpg" alt="Top Pick Sushi" class="top-pick-image">
+                    <img src="Foods/Menu/3.png" alt="Top Pick Sushi" class="top-pick-image">
                     <div class="top-pick-text">Sushi</div>
                     <div class="top-pick-price">$20</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/Menu/4.png" alt="Top Pick Tacos" class="top-pick-image">
+                    <div class="top-pick-text">Tacos</div>
+                    <div class="top-pick-price">$10</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/Menu/9.png" alt="Top Pick Salad" class="top-pick-image">
+                    <div class="top-pick-text">Salad</div>
+                    <div class="top-pick-price">$15</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/Menu/6.png" alt="Top Pick Sandwich" class="top-pick-image">
+                    <div class="top-pick-text">Sandwich</div>
+                    <div class="top-pick-price">$12</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/Menu/7.png" alt="Top Pick Soup" class="top-pick-image">
+                    <div class="top-pick-text">Soup</div>
+                    <div class="top-pick-price">$8</div>
+                </div>
+            </div>
+            <div class="top-pick">
+                <div class="top-pick-box">
+                    <img src="Foods/Menu/8.png" alt="Top Pick Chicken Wings" class="top-pick-image">
+                    <div class="top-pick-text">Chicken Wings</div>
+                    <div class="top-pick-price">$15</div>
                 </div>
             </div>
         </div>
@@ -115,21 +179,21 @@
         <h3>Foods</h3>
         <div class="menu-items">
             <div class="menu-item food" data-price="8">
-                <img src="Foods/pizza.jpg" alt="Pizza" class="menu-image">
+                <img src="Foods/Single/1.jpg" alt="Pizza" class="menu-image">
                 <div class="menu-text">
                     <div class="menu-name">Pizza</div>
                     <div class="menu-price">$8</div>
                 </div>
             </div>
             <div class="menu-item food" data-price="12">
-                <img src="Foods/burger.jpg" alt="Burger" class="menu-image">
+                <img src="Foods/Single/2.jpg" alt="Burger" class="menu-image">
                 <div class="menu-text">
                     <div class="menu-name">Burger</div>
                     <div class="menu-price">$12</div>
                 </div>
             </div>
             <div class="menu-item food" data-price="15">
-                <img src="Foods/pasta.jpg" alt="Pasta" class="menu-image">
+                <img src="Foods/Single/3.jpg" alt="Pasta" class="menu-image">
                 <div class="menu-text">
                     <div class="menu-name">Pasta</div>
                     <div class="menu-price">$15</div>
