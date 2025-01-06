@@ -53,7 +53,7 @@
                     <li><a href="index-menu.html">Menu</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact-map">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,7 +68,7 @@
             <li><a href="index-menu.html">Menu</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact-map">Contact</a></li>
         </ul>
     </div>
     <!-- Back to Top Button -->
@@ -94,7 +94,6 @@
 
 <!-- Promo Section -->
 <section class="promos" id="promos">
-    
     <div class="promo-container">
         <h2>Promos</h2>
         <div class="promo-description">
@@ -104,6 +103,10 @@
             <a href="#promos" class="promo-item" onclick="openLightbox('Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png')">
                 <img src="Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png" alt="Sisig Promo">
                 <p>Sinadya Promo!</p>
+            </a>
+            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/Another Promo Image.png')">
+                <img src="Foods/Another Promo Image.png" alt="Another Promo">
+                <p>Another Promo!</p>
             </a>
         </div>
     </div>
@@ -141,10 +144,7 @@
 <!-- About Us Section -->
 <section class="about" id="about">
     <div class="about-container">
-        <div class="about-hero">
-            <h2>About Us</h2>
-            <p>Discover the story behind MB's Food Hub</p>
-        </div>
+     
         
         <!-- New Image and Intro Text -->
 
@@ -152,7 +152,7 @@
     <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
         <img src="Pics/Logo.jpg" alt="Intro Image" class="intro-image">
     </a>
-    <h3>Introduction</h3>
+    <h3>About Us</h3>
     <p>"Step into our place under the mango tree, where the aroma of freshly brewed coffee fills the air." Known for our best pork and chicken sisig, we also serve rice meals, snacks & coffee.</p>
     <p>Just Munch a Bunch with us here at MB's Food Hub & Cafe</p>
 </div>
@@ -206,22 +206,22 @@
     <h2>Gallery</h2>
     <div class="gallery-container">
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/325434776_557739932708413_1721341352422140346_n.jpg')">
-            <img src="Pics/ShopPics/325434776_557739932708413_1721341352422140346_n.jpg" alt="Gallery Image 1">
+            <img src="Pics/Gallery/1.jpg" alt="Gallery Image 1">
         </div>
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/325778423_554178946612466_2714534547201684385_n.jpg')">
-            <img src="Pics/ShopPics/325778423_554178946612466_2714534547201684385_n.jpg" alt="Gallery Image 2">
+            <img src="Pics/Gallery/9.jpg" alt="Gallery Image 2">
         </div>
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/358043666_258718036772088_7981705999836249522_n.jpg')">
-            <img src="Pics/ShopPics/358043666_258718036772088_7981705999836249522_n.jpg" alt="Gallery Image 3">
+            <img src="Pics/Gallery/3.jpg" alt="Gallery Image 3">
         </div>
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/381666298_297551742888717_4472328310536696207_n.jpg')">
-            <img src="Pics/ShopPics/381666298_297551742888717_4472328310536696207_n.jpg" alt="Gallery Image 4">
+            <img src="Pics/Gallery/4.jpg" alt="Gallery Image 4">
         </div>
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/366746504_277291474914744_6592459616185513717_n.jpg')">
-            <img src="Pics/ShopPics/366746504_277291474914744_6592459616185513717_n.jpg" alt="Gallery Image 5">
+            <img src="Pics/Gallery/7.jpg" alt="Gallery Image 5">
         </div>
         <div class="gallery-item" onclick="openLightbox('Pics/ShopPics/358060868_258718096772082_7341728869133325962_n.jpg')">
-            <img src="Pics/ShopPics/358060868_258718096772082_7341728869133325962_n.jpg" alt="Gallery Image 6">
+            <img src="Pics/Gallery/8.jpg" alt="Gallery Image 6">
         </div>
     </div>
 </section>
@@ -235,68 +235,123 @@
 
 
 
-<section class="contact" id="contact">
-    <div class="contact-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/xnnnzzwk" method="POST">
-            <div class="form-group">
-                <label for="contactType">Select Contact Type:</label>
-                <select id="contactType" name="contactType" required onchange="toggleInputFields()">
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="report">Report</option>
-                    <option value="message">Send us a Message</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required disabled>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required disabled>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" required disabled></textarea>
-            </div>
-            <div class="form-group" id="ratingContainer" style="display: none;">
-                <label for="rating">Rate Us:</label>
-                <select id="rating" name="rating">
-                    <option value="" disabled selected>Select a rating</option>
-                    <option value="1">1 Star</option>
-                    <option value="2">2 Stars</option>
-                    <option value="3">3 Stars</option>
-                    <option value="4">4 Stars</option>
-                    <option value="5">5 Stars</option>
-                </select>
-            </div>
-            <button type="submit" disabled>Send Message</button>
-        </form>
-    </div>
-</section>
-
-
-
-<!-- Google Map Section -->
-<section class="map" id="map">
-    <div class="map-container">
+<section class="contact-map" id="contact-map">
+<section class="map-contact" id="map-contact">
+    <div class="map-contact-container">
+      <div class="map-container">
         <h2>Our Location</h2>
         <p>Visit us at our store to enjoy delicious meals!</p>
         <a href="https://www.google.com/maps/place/Your+Store+Name" target="_blank" rel="noopener noreferrer">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!4v1735399154528!6m8!1m7!1sB6qBcQDuUdiOH363pnEKUw!2m2!1d11.59445725815928!2d122.7503185799618!3f12.221598484024753!4f-11.449115295984285!5f0.7820865974627469" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!4v1735399154528!6m8!1m7!1sB6qBcQDuUdiOH363pnEKUw!2m2!1d11.59445725815928!2d122.7503185799618!3f12.221598484024753!4f-11.449115295984285!5f0.7820865974627469" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
         </a>
+      </div>
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="https://formspree.io/f/xnnnzzwk" method="POST">
+          <div class="form-group">
+            <label for="contactType">Select Contact Type:</label>
+            <select id="contactType" name="contactType" required onchange="toggleInputFields()">
+              <option value="" disabled selected>Select an option</option>
+              <option value="feedback">Feedback</option>
+              <option value="report">Report</option>
+              <option value="message">Send us a Message</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required disabled>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required disabled>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required disabled></textarea>
+          </div>
+          <div class="form-group" id="ratingContainer" style="display: none;">
+            <label for="rating">Rate Us:</label>
+            <select id="rating" name="rating">
+              <option value="" disabled selected>Select a rating</option>
+              <option value="1">1 Star</option>
+              <option value="2">2 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="5">5 Stars</option>
+            </select>
+          </div>
+          <button type="submit" disabled>Send Message</button>
+        </form>
+      </div>
     </div>
+  </section>
 </section>
 
 
+<div class="feedback-form">
+    <h2>Leave a Customer Review</h2>
+    <p>We value your feedback and would love to hear about your experience at MB's Food Hub. Your review will help us improve our service and provide a better dining experience for our customers.</p>
+
+    <div class="button-container">
+        <button type="button" onclick="window.open('https://form.jotform.com/250045155760451', '_self')">Leave a Review</button>
+    </div>
+</div>
+
+
+
+
+<section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <div class="testimonial-profile">
+                <img src="profile-icon.png" alt="Profile Icon">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>Emily R.</span>
+            </div>
+            <p>"MB's Food Hub is my go-to spot for delicious and authentic Filipino cuisine. The staff is always friendly and accommodating, and the prices are very reasonable. I highly recommend it!"</p>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-profile">
+                <img src="profile-icon.png" alt="Profile Icon">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>Mark K.</span>
+            </div>
+            <p>"I've been to MB's Food Hub several times, and I've never been disappointed. The food is always fresh and flavorful, and the service is top-notch. I love the cozy atmosphere too!"</p>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-profile">
+                <img src="profile-icon.png" alt="Profile Icon">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>Sarah T.</span>
+            </div>
+            <p>"I'm a big fan of Filipino food, and MB's Food Hub does not disappoint. The menu is extensive, and the prices are very affordable. I've tried several dishes, and they're all delicious. Highly recommended!"</p>
+        </div>
+    </div>
+    
+</section>
 
 
 
@@ -315,7 +370,15 @@
                 <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
                 <p>Phone: (123) 456-7890</p>
                 <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
-                <p><a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Follow</a> or <a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a></p>
+                <p>
+                    <a href="https://web.facebook.com/profile.php?id=100079016804383" class="icons" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i> Follow
+                    </a> 
+                    or 
+                    <a href="https://m.me/325099922226364" class="icons" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-messenger"></i> Message Us on Facebook
+                    </a>
+                </p>
             </div>
         </div>
         

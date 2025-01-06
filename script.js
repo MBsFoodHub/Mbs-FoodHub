@@ -269,21 +269,26 @@ function toggleLogo() {
 
 
 
-// Function to filter menu items based on category
 function filterMenu() {
   const category = document.getElementById("category").value;
   const foodCategory = document.querySelector('.food-category');
   const beverageCategory = document.querySelector('.beverage-category');
 
-  if (category === "all") {
-      foodCategory.style.display = "block"; // Show food category
-      beverageCategory.style.display = "block"; // Show beverage category
-  } else if (category === "food") {
-      foodCategory.style.display = "block"; // Show food category
-      beverageCategory.style.display = "none"; // Hide beverage category
-  } else if (category === "beverages") {
-      foodCategory.style.display = "none"; // Hide food category
-      beverageCategory.style.display = "block"; // Show beverage category
+  switch (category) {
+    case "all":
+      foodCategory.style.display = "block";
+      beverageCategory.style.display = "block";
+      break;
+    case "food":
+      foodCategory.style.display = "block";
+      beverageCategory.style.display = "none";
+      break;
+    case "beverages":
+      foodCategory.style.display = "none";
+      beverageCategory.style.display = "block";
+      break;
+    default:
+      console.error("Invalid category selected");
   }
 }
 
@@ -330,3 +335,30 @@ window.addEventListener('scroll', () => {
 });
 
 
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll(".testimonial");
+
+// Function to show the current testimonial
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove("active");
+        if (i === index) {
+            testimonial.classList.add("active");
+        }
+    });
+}
+
+// Function to show the next testimonial
+function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}
+
+// Function to show the previous testimonial
+function prevTestimonial() {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentTestimonial);
+}
+
+// Initialize the first testimonial
+showTestimonial(currentTestimonial);
