@@ -77,9 +77,10 @@
     ↑
 </button>
 
-<section class="extra-space">
 
-</section>
+
+
+
 
 <section id="top-picks">
     <div class="top-picks-box">
@@ -87,64 +88,63 @@
         <div class="top-picks-container">
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/1.png" alt="Top Pick Pizza" class="top-pick-image">
-                    <div class="top-pick-text">Snacks & PicaPica</div>
-                    <div class="top-pick-price">$8</div>
+                    <img src="Foods/Menu/1.png" alt="Top Pick Pizza" class="top-pick-image" onclick="openLightbox('Foods/Menu/1.png')">
+              
+                    
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/2.png" alt="Top Pick Burger" class="top-pick-image">
-                    <div class="top-pick-text">Burger</div>
-                    <div class="top-pick-price">$12</div>
+                    <img src="Foods/Menu/2.png" alt="Top Pick Burger" class="top-pick-image" onclick="openLightbox('Foods/Menu/2.png')">
+                 
+                    
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/3.png" alt="Top Pick Sushi" class="top-pick-image">
-                    <div class="top-pick-text">Sushi</div>
-                    <div class="top-pick-price">$20</div>
+                    <img src="Foods/Menu/3.png" alt="Top Pick Sushi" class="top-pick-image" onclick="openLightbox('Foods/Menu/3.png')">
+                   
+                    
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/4.png" alt="Top Pick Tacos" class="top-pick-image">
-                    <div class="top-pick-text">Tacos</div>
-                    <div class="top-pick-price">$10</div>
+                    <img src="Foods/Menu/4.png" alt="Top Pick Tacos" class="top-pick-image" onclick="openLightbox('Foods/Menu/4.png')">
+              
+                   
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/9.png" alt="Top Pick Salad" class="top-pick-image">
-                    <div class="top-pick-text">Salad</div>
-                    <div class="top-pick-price">$15</div>
+                    <img src="Foods/Menu/9.png" alt="Top Pick Salad" class="top-pick-image" onclick="openLightbox('Foods/Menu/9.png')">
+               
+                  
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/6.png" alt="Top Pick Sandwich" class="top-pick-image">
-                    <div class="top-pick-text">Sandwich</div>
-                    <div class="top-pick-price">$12</div>
+                    <img src="Foods/Menu/6.png" alt="Top Pick Sandwich" class="top-pick-image" onclick="openLightbox('Foods/Menu/6.png')">
+        
+                 
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/7.png" alt="Top Pick Soup" class="top-pick-image">
-                    <div class="top-pick-text">Soup</div>
-                    <div class="top-pick-price">$8</div>
+                    <img src="Foods/Menu/7.png" alt="Top Pick Soup" class="top-pick-image" onclick="openLightbox('Foods/Menu/7.png')">
+         
+                  
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/Menu/8.png" alt="Top Pick Chicken Wings" class="top-pick-image">
-                    <div class="top-pick-text">Chicken Wings</div>
-                    <div class="top-pick-price">$15</div>
+                    <img src="Foods/Menu/8.png" alt="Top Pick Chicken Wings" class="top-pick-image" onclick="openLightbox('Foods/Menu/8.png')">
+        
+                 
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 
 
@@ -159,6 +159,13 @@
                 <option value="all">All</option>
                 <option value="food">Foods</option>
                 <option value="beverages">Beverages</option>
+                <option value="silog-meals">Silog Meals</option>
+                <option value="desserts">Desserts</option>
+                <option value="snacks">Snacks</option>
+                <option value="pasta">Pasta</option>
+                <option value="lutong-bahay">Lutong Bahay</option>
+                <option value="bundle">Bundle</option>
+                <option value="pares-meals">Pares Meals</option>
             </select>
         </div>
         
@@ -167,68 +174,10 @@
             <label for="price">Choose a price range:</label>
             <select id="price" onchange="filterPrice()">
                 <option value="all">All</option>
-                <option value="low">Low (Under $10)</option>
-                <option value="medium">Medium ($10 - $20)</option>
-                <option value="high">High (Above $20)</option>
+                <option value="low">Low (Under 100)</option>
+                <option value="medium">Medium (100 - 350)</option>
+                <option value="high">High (Above 350)</option>
             </select>
-        </div>
-    </div>
-    
-    <!-- Foods Category -->
-    <div class="menu-category food-category">
-        <h3>Foods</h3>
-        <div class="menu-items">
-            <div class="menu-item food" data-price="8">
-                <img src="Foods/Single/1.jpg" alt="Pizza" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Pizza</div>
-                    <div class="menu-price">$8</div>
-                </div>
-            </div>
-            <div class="menu-item food" data-price="12">
-                <img src="Foods/Single/2.jpg" alt="Burger" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Burger</div>
-                    <div class="menu-price">$12</div>
-                </div>
-            </div>
-            <div class="menu-item food" data-price="15">
-                <img src="Foods/Single/3.jpg" alt="Pasta" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Pasta</div>
-                    <div class="menu-price">$15</div>
-                </div>
-            </div>
-            <!-- More menu items... -->
-        </div>
-    </div>
-
-    <!-- Beverages Category -->
-    <div class="menu-category beverage-category">
-        <h3>Beverages</h3>
-        <div class="menu-items">
-            <div class="menu-item beverages" data-price="5">
-                <img src="Foods/Single/10.jpg" alt="Coffee" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Coffee</div>
-                    <div class="menu-price">$5</div>
-                </div>
-            </div>
-            <div class="menu-item beverages" data-price="3">
-                <img src="Foods/Single/11.jpg" alt="Tea" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Tea</div>
-                    <div class="menu-price">$3</div>
-                </div>
-            </div>
-            <div class="menu-item beverages" data-price="4">
-                <img src="Foods/Single/12.jpg" alt="Juice" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Juice</div>
-                    <div class="menu-price">$4</div>
-                </div>
-            </div>
-            <!-- More menu items... -->
         </div>
     </div>
 </section>
@@ -239,6 +188,497 @@
 
 
 
+
+
+<!-- Foods Category -->
+<div class="menu-category food-category">
+    <h3>Main Course</h3>
+    <div class="menu-items">
+        <div class="menu-item food" data-price="85">
+            <img src="Foods/Menu Foods/Main Course/15.png" alt="Beef Steak" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/15.png')">
+            <div class="menu-text">
+                <div class="menu-name">Beef Steak</div>
+                <div class="menu-price">85</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="85">
+            <img src="Foods/Menu Foods/Main Course/19.png" alt="Lechon Kawali" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/19.png')">
+            <div class="menu-text">
+                <div class="menu-name">Lechon Kawali</div>
+                <div class="menu-price">85</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="25">
+            <img src="Foods/Menu Foods/Main Course/17.png" alt="Pork BBQ" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/17.png')">
+            <div class="menu-text">
+                <div class="menu-name">Pork BBQ</div>
+                <div class="menu-price">25</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="99">
+            <img src="Foods/Menu Foods/Main Course/18.png" alt="Baby Back Ribs" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/18.png')">
+            <div class="menu-text">
+                <div class="menu-name">Baby Back Ribs</div>
+                <div class="menu-price">99</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="99">
+            <img src="Foods/Menu Foods/Main Course/2.png" alt="Grilled Liempo" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/2.png')">
+            <div class="menu-text">
+                <div class="menu-name">Grilled Liempo</div>
+                <div class="menu-price">99</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="89">
+            <img src="Foods/Menu Foods/Main Course/22.png" alt="Breaded Porkchop" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/22.png')">
+            <div class="menu-text">
+                <div class="menu-name">Breaded Porkchop</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="89">
+            <img src="Foods/Menu Foods/Main Course/23.png" alt="Grilled Porkchop" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/23.png')">
+            <div class="menu-text">
+                <div class="menu-name">Grilled Porkchop</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item food" data-price="99">
+            <img src="Foods/Menu Foods/Main Course/27.png" alt="Lechon Kawali" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Main Course/27.png')">
+            <div class="menu-text">
+                <div class="menu-name">Lechon Kawali</div>
+                <div class="menu-price">99</div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Silog Meals Category -->
+<div class="menu-category silog-meals-category">
+    <h3>Silog Meals</h3>
+    <div class="menu-items">
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/5.png" alt="Grilled Porkchop" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/5.png')">
+            <div class="menu-text">
+                <div class="menu-name">Hotsilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/13.png" alt="Chicasilog" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/13.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chicasilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/8.png" alt="Bacon Silog" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/8.png')">
+            <div class="menu-text">
+                <div class="menu-name">BangSilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/7.png" alt="Chicken Silog" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/7.png')">
+            <div class="menu-text">
+                <div class="menu-name">Tapsilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/3.png" alt="Pork Silog" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/3.png')">
+            <div class="menu-text">
+                <div class="menu-name">Tocilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+        <div class="menu-item silog-meals" data-price="89">
+            <img src="Foods/Menu Foods/Silog Meals/4.png" alt="Beef Silog" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Silog Meals/4.png')">
+            <div class="menu-text">
+                <div class="menu-name">Cornsilog</div>
+                <div class="menu-price">89</div>
+            </div>
+        </div>
+
+     
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Desserts Category -->
+    <div class="menu-category desserts-category">
+        <h3>Desserts</h3>
+        <div class="menu-items">
+            <div class="menu-item desserts" data-price="5">
+                <img src="Foods/Desserts/1.jpg" alt="Chocolate Cake" class="menu-image" onclick="openLightbox('Foods/Single/1.jpg')">
+                <div class="menu-text">
+                    <div class="menu-name">Chocolate Cake</div>
+                    <div class="menu-price">$5</div>
+                </div>
+            </div>
+            <div class="menu-item desserts" data-price="4">
+                <img src="Foods/Desserts/2.jpg" alt="Ice Cream" class="menu-image" onclick="openLightbox('Foods/Single/1.jpg')">
+                <div class="menu-text">
+                    <div class="menu-name">Ice Cream</div>
+                    <div class="menu-price">$4</div>
+                </div>
+            </div>
+            <div class="menu-item desserts" data-price="6">
+                <img src="Foods/Desserts/3.jpg" alt="Fruit Salad" class="menu-image" onclick="openLightbox('Foods/Single/1.jpg')">
+                <div class="menu-text">
+                    <div class="menu-name">Fruit Salad</div>
+                    <div class="menu-price">$6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Snacks Category -->
+<div class="menu-category snacks-category">
+    <h3>Snacks</h3>
+    <div class="menu-items">
+        <div class="menu-item snacks" data-price="169">
+            <img src="Foods/Menu Foods/Snacks/28.png" alt="Chicharon Bulaklak" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/28.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chicharon Bulaklak</div>
+                <div class="menu-price">169</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="65">
+            <img src="Foods/Menu Foods/Snacks/30.png" alt="Sandwich" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/30.png')">
+            <div class="menu-text">
+                <div class="menu-name">Sandwich</div>
+                <div class="menu-price">65</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="100">
+            <img src="Foods/Menu Foods/Snacks/44.png" alt="Chicharon" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/44.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chicharon</div>
+                <div class="menu-price">100</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="169">
+            <img src="Foods/Menu Foods/Snacks/45.png" alt="Cheesyhotdog w/ Cheesyfries" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/45.png')">
+            <div class="menu-text">
+                <div class="menu-name">Cheesyhotdog w/ Cheesyfries</div>
+                <div class="menu-price">169</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="129">
+            <img src="Foods/Menu Foods/Snacks/47.png" alt="Cheesynachos" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/47.png')">
+            <div class="menu-text">
+                <div class="menu-name">Cheesynachos</div>
+                <div class="menu-price">129</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="129">
+            <img src="Foods/Menu Foods/Snacks/48.png" alt="Cheesyfries" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/48.png')">
+            <div class="menu-text">
+                <div class="menu-name">Cheesyfries</div>
+                <div class="menu-price">129</div>
+            </div>
+        </div>
+        <div class="menu-item snacks" data-price="75">
+            <img src="Foods/Menu Foods/Snacks/49.png" alt="Plain Fries" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Snacks/49.png')">
+            <div class="menu-text">
+                <div class="menu-name">Bacon Fries</div>
+                <div class="menu-price">75</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Pasta Category -->
+    <div class="menu-category pasta-category">
+        <h3>Pasta</h3>
+        <div class="menu-items">
+            <div class="menu-item pasta" data-price="45">
+                <img src="Foods/Menu Foods/Pasta & Noodles/11.png" alt="Carbonara" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Pasta & Noodles/11.png')">
+                <div class="menu-text">
+                    <div class="menu-name">Carbonara</div>
+                    <div class="menu-price">45</div>
+                </div>
+            </div>
+            
+            <div class="menu-item pasta" data-price="120">
+                <img src="Foods/Menu Foods/Pasta & Noodles/20.png" alt="Bihon Guisado" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Pasta & Noodles/20.png')">
+                <div class="menu-text">
+                    <div class="menu-name">Bihon Guisado</div>
+                    <div class="menu-price">120</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Beverages Category -->
+    <div class="menu-category beverage-category">
+        <h3>Beverages</h3>
+        <div class="menu-items">
+            <div class="menu-item beverages" data-price="5">
+                <img src="" alt="Coffee" class="menu-image">
+                <div class="menu-text">
+                    <div class="menu-name">Coffee</div>
+                    <div class="menu-price">$5</div>
+                </div>
+            </div>
+            <div class="menu-item beverages" data-price="3">
+                <img src="Foods/Menu Foods/2.png" alt="Tea" class="menu-image" onclick="openLightbox('Foods/Single/1.jpg')">
+                <div class="menu-text">
+                    <div class="menu-name">Tea</div>
+                    <div class="menu-price">$3</div>
+                </div>
+            </div>
+            <div class="menu-item beverages" data-price="4">
+                <img src="Foods/Menu Foods/3.png" alt="Juice" class="menu-image" onclick="openLightbox('Foods/Single/1.jpg')">
+                <div class="menu-text">
+                    <div class="menu-name">Juice</div>
+                    <div class="menu-price">$4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lutong Bahay Category -->
+<div class="menu-category lutong-bahay-category">
+    <h3>Lutong Bahay</h3>
+    <div class="menu-items">
+        <div class="menu-item lutong-bahay" data-price="30">
+            <img src="Foods/Menu Foods/Lutong Bahay Special/43.png" alt="Chopsuey" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Lutong Bahay Special/43.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chopsuey</div>
+                <div class="menu-price">30</div>
+            </div>
+        </div>
+        <div class="menu-item lutong-bahay" data-price="45">
+            <img src="Foods/Menu Foods/Lutong Bahay Special/40.png" alt="Pork Giniling" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Lutong Bahay Special/40.png')">
+            <div class="menu-text">
+                <div class="menu-name">Pork Giniling</div>
+                <div class="menu-price">45</div>
+            </div>
+        </div>
+        <div class="menu-item lutong-bahay" data-price="30">
+            <img src="Foods/Menu Foods/Lutong Bahay Special/41.png" alt="Sarciadong Isda" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Lutong Bahay Special/41.png')">
+            <div class="menu-text">
+                <div class="menu-name">Sarciadong Isda</div>
+                <div class="menu-price">30</div>
+            </div>
+        </div>
+        <div class="menu-item lutong-bahay" data-price="45">
+            <img src="Foods/Menu Foods/Lutong Bahay Special/42.png" alt="Chicken Tinola" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Lutong Bahay Special/42.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chicken Tinola</div>
+                <div class="menu-price">45</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Bundle Category -->
+<div class="menu-category bundle-category">
+    <h3>Bundle</h3>
+    <div class="menu-items">
+        <div class="menu-item bundle" data-price="250">
+            <img src="Foods/Menu Foods/Bundle/29.png" alt="Large Lumpia Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/29.png')">
+            <div class="menu-text">
+                <div class="menu-name">Large Lumpia Bundle</div>
+                
+                <div class="menu-price">$250</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="550">
+            <img src="Foods/Menu Foods/Bundle/39.png" alt="Large Pancit Guisado Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/39.png')">
+            <div class="menu-text">
+                <div class="menu-name">Large Pancit Guisado Bundle</div>
+              
+                <div class="menu-price">550</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="400">
+            <img src="Foods/Menu Foods/Bundle/38.png" alt="Chopsuey Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/38.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chopsuey Bundle</div>
+                <div class="menu-price">400</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="119">
+            <img src="Foods/Menu Foods/Bundle/31.png" alt="Calamares Ring Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/31.png')">
+            <div class="menu-text">
+                <div class="menu-name">Calamares Ring Bundle</div>
+                <div class="menu-price">119</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="385">
+            <img src="Foods/Menu Foods/Bundle/32.png" alt="Medium Pancit Guisado Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/32.png')">
+            <div class="menu-text">
+                <div class="menu-name">Medium Pancit Guisado Bundle</div>
+                <div class="menu-price">385</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="150">
+            <img src="Foods/Menu Foods/Bundle/33.png" alt="Sweet and Sour Fish Fellet Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/33.png')">
+            <div class="menu-text">
+                <div class="menu-name">Sweet and Sour Fish Fellet Bundle</div>
+                <div class="menu-price">150</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="350">
+            <img src="Foods/Menu Foods/Bundle/34.png" alt="Fried Chicken Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/34.png')">
+            <div class="menu-text">
+                <div class="menu-name">Fried Chicken Bundle</div>
+                <div class="menu-price">350</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="350">
+            <img src="Foods/Menu Foods/Bundle/35.png" alt="Sisig Splatter Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/35.png')">
+            <div class="menu-text">
+                <div class="menu-name">Sisig Splatter Bundle</div>
+                <div class="menu-price">350</div>
+            </div>
+        </div>
+        <div class="menu-item bundle" data-price="35">
+            <img src="Foods/Menu Foods/Bundle/36.png" alt="Chicken Cordon Bleu Bundle" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Bundle/36.png')">
+            <div class="menu-text">
+                <div class="menu-name">Chicken Cordon Bleu Bundle</div>
+                <div class="menu-price">$35</div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Pares Meals Category -->
+<div class="menu-category pares-meals-category">
+    <h3>Pares Meals</h3>
+    <div class="menu-items">
+        <div class="menu-item pares-meals" data-price="99">
+            <img src="Foods/Menu Foods/Pares/10.png" alt="Pares Mami w/ Rice & Egg" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Pares/10.png')">
+            <div class="menu-text">
+                <div class="menu-name">Pares Mami w/ Rice & Egg</div>
+                <div class="menu-price">99</div>
+            </div>
+        </div>
+        <div class="menu-item pares-meals" data-price="55">
+            <img src="Foods/Menu Foods/Pares/16.png" alt="Beef Pares" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Pares/16.png')">
+            <div class="menu-text">
+                <div class="menu-name">Beef Pares</div>
+                <div class="menu-price">55</div>
+            </div>
+        </div>
+        <div class="menu-item pares-meals" data-price="55">
+            <img src="Foods/Menu Foods/Pares/24.png" alt="Pares Mami" class="menu-image" onclick="openLightbox('Foods/Menu Foods/Pares/24.png')">
+            <div class="menu-text">
+                <div class="menu-name">Pares Mami</div>
+                <div class="menu-price">55</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Lightbox for fullscreen images -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="Fullscreen Image">
+        <!-- Removed the title element -->
+    </div>
+</div>
 
 
 
@@ -261,7 +701,15 @@
                 <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
                 <p>Phone: (123) 456-7890</p>
                 <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
-                <p><a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Follow</a> or <a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a></p>
+                <p>
+                    <a href="https://web.facebook.com/profile.php?id=100079016804383" class="icons" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i> Follow
+                    </a> 
+                    or 
+                    <a href="https://m.me/325099922226364" class="icons" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-messenger"></i> Message Us on Facebook
+                    </a>
+                </p>
             </div>
         </div>
         
@@ -278,5 +726,10 @@
         <p>&copy; 2023 MB's Food Hub. All rights reserved.</p>
     </div>
 </footer>
+
+
+
+
+
 </body>
 </html>

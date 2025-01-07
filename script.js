@@ -262,62 +262,159 @@ function toggleLogo() {
 
 
 
-
-
-
-
-
-
-
+// Function to filter menu items based on category
 function filterMenu() {
-  const category = document.getElementById("category").value;
-  const foodCategory = document.querySelector('.food-category');
-  const beverageCategory = document.querySelector('.beverage-category');
+    const category = document.getElementById("category").value;
+    const lutongBahayCategory = document.querySelector('.lutong-bahay-category');
+    const bundleCategory = document.querySelector('.bundle-category');
+    const paresMealsCategory = document.querySelector('.pares-meals-category');
+    const foodCategory = document.querySelector('.food-category');
+    const beverageCategory = document.querySelector('.beverage-category');
+    const silogMealsCategory = document.querySelector('.silog-meals-category');
+    const dessertsCategory = document.querySelector('.desserts-category');
+    const snacksCategory = document.querySelector('.snacks-category');
+    const pastaCategory = document.querySelector('.pasta-category');
 
-  switch (category) {
-    case "all":
-      foodCategory.style.display = "block";
-      beverageCategory.style.display = "block";
-      break;
-    case "food":
-      foodCategory.style.display = "block";
-      beverageCategory.style.display = "none";
-      break;
-    case "beverages":
-      foodCategory.style.display = "none";
-      beverageCategory.style.display = "block";
-      break;
-    default:
-      console.error("Invalid category selected");
-  }
+    switch (category) {
+        case "all":
+            lutongBahayCategory.style.display = "block";
+            bundleCategory.style.display = "block";
+            paresMealsCategory.style.display = "block";
+            foodCategory.style.display = "block";
+            beverageCategory.style.display = "block";
+            silogMealsCategory.style.display = "block";
+            dessertsCategory.style.display = "block";
+            snacksCategory.style.display = "block";
+            pastaCategory.style.display = "block";
+            break;
+        case "lutong-bahay":
+            lutongBahayCategory.style.display = "block";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "bundle":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "block";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "pares-meals":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "block";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "food":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "block";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "beverages":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "block";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "silog-meals":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "block";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "desserts":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "block";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "none";
+            break;
+        case "snacks":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "block";
+            pastaCategory.style.display = "none";
+            break;
+        case "pasta":
+            lutongBahayCategory.style.display = "none";
+            bundleCategory.style.display = "none";
+            paresMealsCategory.style.display = "none";
+            foodCategory.style.display = "none";
+            beverageCategory.style.display = "none";
+            silogMealsCategory.style.display = "none";
+            dessertsCategory.style.display = "none";
+            snacksCategory.style.display = "none";
+            pastaCategory.style.display = "block";
+            break;
+    }
 }
 
 // Function to filter menu items based on price
 function filterPrice() {
-  const priceRange = document.getElementById("price").value;
-  const menuItems = document.querySelectorAll('.menu-item');
+    const priceRange = document.getElementById("price").value;
+    const menuItems = document.querySelectorAll('.menu-item');
 
-  menuItems.forEach(item => {
-      const price = parseFloat(item.getAttribute('data-price'));
-
-      if (priceRange === "all") {
-          item.style.display = "block"; // Show all items
-      } else if (priceRange === "low" && price < 10) {
-          item.style.display = "block"; // Show low-priced items
-      } else if (priceRange === "medium" && price >= 10 && price <= 20) {
-          item.style.display = "block"; // Show medium-priced items
-      } else if (priceRange === "high" && price > 20) {
-          item.style.display = "block"; // Show high-priced items
-      } else {
-          item.style.display = "none"; // Hide items that don't match the filter
-      }
-  });
+    menuItems.forEach(item => {
+        const price = parseInt(item.getAttribute('data-price'));
+        if (priceRange === "all") {
+            item.style.display = "block";
+        } else if (priceRange === "low") {
+            item.style.display = price < 100 ? "block" : "none";
+        } else if (priceRange === "medium") {
+            item.style.display = price >= 100 && price <= 350 ? "block" : "none";
+        } else if (priceRange === "high") {
+            item.style.display = price > 350 ? "block" : "none";
+        }
+    });
 }
 
-// Call filterMenu on page load to show the default category
-window.onload = function() {
-  filterMenu(); // Show all items by default
-};
+// Event listeners for filters
+document.getElementById("category").addEventListener("change", filterMenu);
+document.getElementById("price").addEventListener("change", filterByPrice);
+
+
+
+
 
 
 
@@ -362,3 +459,7 @@ function prevTestimonial() {
 
 // Initialize the first testimonial
 showTestimonial(currentTestimonial);
+
+
+
+
