@@ -49,11 +49,12 @@
                 </label>
                 <ul class="nav-linked">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#promos">Promos</a></li>
+                    <li><a href="index.html#hot-deals">Hot Deals</a></li>
                     <li><a href="index-menu.html">Menu</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#contact-map">Contact</a></li>
+                    <li><a href="index.html#review">Review</a></li>
                 </ul>
             </nav>
            
@@ -65,11 +66,12 @@
         <button class="close-btn" onclick="closeSidebar()">×</button>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#promos">Promos</a></li>
+            <li><a href="index.html#hot-deals">Hot Deals</a></li>
             <li><a href="index-menu.html">Menu</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#gallery">Gallery</a></li>
             <li><a href="index.html#contact-map">Contact</a></li>
+            <li><a href="index.html#review">Review</a></li>
         </ul>
     </div>
     <!-- Back to Top Button -->
@@ -79,7 +81,15 @@
 
 
 
-
+<!-- Social Icons -->
+<div class="social-icons">
+    <a href="https://www.facebook.com/your-facebook-page" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.messenger.com/your-messenger-page" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-messenger"></i>
+    </a>
+  </div>
 
 
 <section id="top-picks">
@@ -672,14 +682,12 @@
 
 
 
-  <!-- Lightbox for fullscreen images -->
-  <div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox" onclick="closeLightbox()">
     <div class="lightbox-content">
-        <img id="lightbox-image" src="" alt="Fullscreen Image">
-        <!-- Removed the title element -->
+      <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <span id="lightbox-close" onclick="closeLightbox()">×</span>
     </div>
-</div>
-
+  </div>
 
 
 
@@ -687,43 +695,13 @@
 
 
 <footer>
-    <div class="footer-content" id="footer">
-        <div class="footer-logo">
-            <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
-                <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
-            </a>
-            <h1>MB's Food Hub</h1>
-        </div>
+    
+      
         
-        <div class="footer-info">
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
-                <p>
-                    <a href="https://web.facebook.com/profile.php?id=100079016804383" class="icons" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i> Follow
-                    </a> 
-                    or 
-                    <a href="https://m.me/325099922226364" class="icons" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-messenger"></i> Message Us on Facebook
-                    </a>
-                </p>
-            </div>
-        </div>
-        
-        <!-- Redesigned "WE ARE OPEN" Box -->
-        <div class="footer-hours">
-            <h4>WE ARE OPEN</h4>
-            <div> <i class="fas fa-clock"></i> <!-- Clock icon --> </div>
-            <p>Monday - Saturday</p>
-            <p>9:00 AM to 9:00 PM</p>
-        </div>
-    </div>
+    
     
     <div class="footer-bottom">
-        <p>&copy; 2023 MB's Food Hub. All rights reserved.</p>
+        <p> Web Developing Team: Barbarono, Mark Steven | Fernandez, Regine | Tupas, John Paul    </p>
     </div>
 </footer>
 

@@ -54,7 +54,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact-map">Contact</a></li>
-                    <li><a href="#feed">Feedback</a></li>
+                    <li><a href="#review">Review</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,7 +70,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact-map">Contact</a></li>
-            <li><a href="#feed">Feedback</a></li>
+            <li><a href="#review">Review</a></li>
         </ul>
     </div>
     <!-- Back to Top Button -->
@@ -102,13 +102,13 @@
             <p>Join us at MB's Food Hub for exclusive offers and delicious deals! Our promos are designed to bring you the best flavors at unbeatable prices.</p>
         </div>
         <div class="promo-grid">
-            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png')">
-                <img src="Foods/White And Brown Modern Asian Food Review Youtube Thumbnail.png" alt="Sisig Promo">
-                <p>Sinadya Promo!</p>
+            <a href="#promos" class="promo-item" onclick="openLightbox('Pics/1.png')">
+                <img src="Pics/1.png" alt="Sisig Promo">
+                <p>Sinadya Hot Deal!</p>
             </a>
-            <a href="#promos" class="promo-item" onclick="openLightbox('Foods/Another Promo Image.png')">
-                <img src="Foods/Another Promo Image.png" alt="Another Promo">
-                <p>Another Promo!</p>
+            <a href="#promos" class="promo-item" onclick="openLightbox('Pics/2.png')">
+                <img src="Pics/2.png" yalt="Cheesyhotdog and Fries">
+                <p>Cheesyhotdog Hot Deal!</p>y
             </a>
         </div>
     </div>
@@ -121,13 +121,12 @@
 
 
 
-  <!-- Lightbox for fullscreen images -->
 <div id="lightbox" onclick="closeLightbox()">
     <div class="lightbox-content">
-        <img id="lightbox-image" src="" alt="Fullscreen Image">
-        <!-- Removed the title element -->
+      <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <span id="lightbox-close" onclick="closeLightbox()">×</span>
     </div>
-</div>
+  </div>
 
 
 
@@ -228,12 +227,12 @@
     </div>
 </section>
 
-<!-- Lightbox for fullscreen images -->
 <div id="lightbox" onclick="closeLightbox()">
     <div class="lightbox-content">
-        <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <span id="lightbox-close" onclick="closeLightbox()">×</span>
     </div>
-</div>
+  </div>
 
 
 
@@ -296,7 +295,28 @@
   </section>
 </section>
 
-<section class="feed" id="feed">
+
+
+
+<section class="contact-info">
+    <div class="get-in-touch">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
+      <p><i class="fas fa-phone"></i> Phone: (123) 456-7890</p>
+      <p><i class="fas fa-map-marker-alt"></i> Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
+    </div>
+    <div class="we-are-open">
+      <h4>We Are Open </h4>
+      <i class="fas fa-clock"></i>
+      <p>Monday - Saturday</p>
+      <p>9:00 AM - 9:00 PM</p>
+    </div>
+  </section>
+
+
+
+
+<section class="feed" id="review">
 <div class="feedback-form">
     <h2>Leave a Customer Review</h2>
     <p>We value your feedback and would love to hear about your experience at MB's Food Hub. Your review will help us improve our service and provide a better dining experience for our customers.</p>
@@ -307,6 +327,15 @@
 </div>
 
 
+<!-- Social Icons -->
+<div class="social-icons">
+    <a href="https://www.facebook.com/your-facebook-page" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.messenger.com/your-messenger-page" target="_blank" class="social-icon">
+      <i class="fab fa-facebook-messenger"></i>
+    </a>
+  </div>
 
 
 <section id="testimonials">
@@ -358,43 +387,9 @@
 
 
 <footer>
-    <div class="footer-content" id="footer">
-        <div class="footer-logo">
-            <a href="Pics/Logo.jpg" onclick="openLightbox('Pics/Logo.jpg'); return false;">
-                <img src="Pics/Logo.jpg" alt="Logo" class="footer-logo-image">
-            </a>
-            <h1>MB's Food Hub</h1>
-        </div>
-        
-        <div class="footer-info">
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Email: <a href="mailto:mbsfoodhub@gmail.com">mbsfoodhub@gmail.com</a></p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Address: Arnaldo Blvd, 5800 Roxas City, Philippines</p>
-                <p>
-                    <a href="https://web.facebook.com/profile.php?id=100079016804383" class="icons" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-f"></i> Follow
-                    </a> 
-                    or 
-                    <a href="https://m.me/325099922226364" class="icons" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-facebook-messenger"></i> Message Us on Facebook
-                    </a>
-                </p>
-            </div>
-        </div>
-        
-        <!-- Redesigned "WE ARE OPEN" Box -->
-        <div class="footer-hours">
-            <h4>WE ARE OPEN</h4>
-            <div> <i class="fas fa-clock"></i> <!-- Clock icon --> </div>
-            <p>Monday - Saturday</p>
-            <p>9:00 AM to 9:00 PM</p>
-        </div>
-    </div>
-    
+   
     <div class="footer-bottom">
-        <p>&copy; 2023 MB's Food Hub. All rights reserved.</p>
+        <p> Web Developing Team: Barbarono, Mark Steven | Fernandez, Regine | Tupas, John Paul    </p>
     </div>
 </footer>
 

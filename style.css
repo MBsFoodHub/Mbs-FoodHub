@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header Styles */
@@ -47,7 +52,7 @@ header .container {
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between logo and nav */
   align-items: center; /* Center items vertically */
-  max-width: 1200px; /* Max width for the container */
+  max-width: 1500px; /* Max width for the container */
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Padding for left and right */
   height: 80px;
@@ -513,12 +518,14 @@ body{
 
 
 #menu {
-  max-width: 1200px; /* Limit the width for better readability */
+  max-width: 1500px; /* Limit the width for better readability */
   margin: 50px auto; /* Center the menu section */
   padding: 20px; /* Padding around the menu */
   background-color: #d5d4dd; /* White background for the menu */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
@@ -582,6 +589,8 @@ h2 {
   margin-bottom: 20px; /* Space between categories */
   display: block; /* Initially hide categories */
   background-color: #d5d4dd;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .menu-category h3 {
@@ -647,13 +656,14 @@ h2 {
 
 /* Lightbox image styling */
 #lightbox img {
-  max-width: 50%; /* Set a maximum width for the image */
-  max-height:50%; /* Set a maximum height for the image */
+  max-width: 100%; /* Set a maximum width for the image */
+  max-height:100%; /* Set a maximum height for the image */
   width: 50%; /* Allow width to adjust automatically */
   height: 50%; /* Allow height to adjust automatically */
   object-fit: contain; /* Maintain the aspect ratio without cropping */
   border: 5px solid black; /* Optional border */
   border-radius: 8px; /* Optional rounded corners */
+  
 }
 
 /* Promo Section Styles */
@@ -748,13 +758,16 @@ h2 {
   cursor: pointer;
 }
 
-/* Lightbox image styling */
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
- 
-  border-radius: 8px;
+#lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 7em;
+  cursor: pointer;
+  color: white;
 }
+
+
 /* About Section Styles */
 .about {
     padding: 4em 2em; /* Increased padding for more space */
@@ -929,27 +942,6 @@ h2 {
 .gallery-item:hover {
   transform: scale(1.05); /* Slightly enlarge the image on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-/* Lightbox Styles */
-#lightbox {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-#lightbox img {
-  max-width: 90%; /* Set a maximum width for the image */
-  max-height: 90%; /* Set a maximum height for the image */
- 
-  border-radius: 8px; /* Optional rounded corners */
 }
 
 
@@ -1129,7 +1121,7 @@ h2 {
 .map-container {
   flex: 1;
   background-color: #F0F0F0;
- ;
+ 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2em;
 }
@@ -1213,6 +1205,116 @@ button:disabled {
 
 
 
+/* Social Icons */
+.social-icons {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+  z-index: 9;
+}
+
+.social-icon:hover {
+  background-color: #592e3d;
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+.social-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+
+
+
+
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 80px;
+}
+
+.get-in-touch {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.we-are-open {
+  background-color: #592e3d;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+}
+
+.we-are-open h4 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.we-are-open p {
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+.get-in-touch h4 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #333;
+  font-size: 2.5em;
+}
+
+.get-in-touch p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.get-in-touch a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.get-in-touch a:hover {
+  color: #23527c;
+}
+
+
+
+
+
+
 
 
 
@@ -1286,7 +1388,7 @@ button:disabled {
 .testimonial p {
   font-size: 16px;
   color: #666;
-  margin-top: 10px;
+  margin-top: 30px;
   flex: 1;
 }
 
@@ -1307,7 +1409,7 @@ button:disabled {
 }
 
 .feedback-form p {
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: black;
   margin-bottom: 20px;
 }
@@ -1345,8 +1447,25 @@ button:disabled {
 footer {
   background-color: #121212;
   color: #F0F0F0;
-  padding: 40px 60px;
+  padding: 20px 20px;
   
+}
+
+
+
+.footer-bottom {
+  text-align: center;
+
+ margin: 0;
+ padding: 0;
+  font-size: 1.0em;
+  color: #F0F0F0;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Stack contact and social sections */
+  gap: 20px; /* Space between sections */
 }
 
 .footer-content {
@@ -1357,89 +1476,23 @@ footer {
   margin: 0 auto; /* Center the footer content */
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.footer-logo h1 {
-  font-size: 2.5em;
-  font-family: 'Spicy Rice', cursive; /* Use the Spicy Rice font */
 
-}
 
-.footer-logo-image {
-  width: 90px; /* Increased logo size */
-  height: 90px; /* Increased logo size */
-  border-radius: 50%; /* Make logo circular */
-  object-fit: cover; /* Ensure the image covers the circle */
-  margin-bottom: 10px;
-  border: 1px solid #27242e;
-}
 
-.footer-info {
-  display: flex;
-  flex-direction: column; /* Stack contact and social sections */
-  gap: 20px; /* Space between sections */
-}
 
-.footer-contact, .footer-social {
-  flex: 1; /* Allow sections to grow */
-}
 
-.footer-contact h4, .footer-follow h4 {
-  color: #F0F0F0;
-  margin-bottom: 10px;
-  font-size: 2.2em;
-}
-
-.footer-contact p {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.footer-contact a {
-  
-  text-decoration: none;
-}
-
-/* Social Media Links Styling */
-.footer-social .social-icons, .footer-follow .social-icons {
-  display: flex;
-  gap: 10px; /* Space between social icons */
-}
-
-.footer-social a i, .footer-follow a i, .footer-logo-image {
-  font-size: 2.0em;
-  color: #F0F0F0;
-  transition: transform 0.3s;
-}
-
-.footer-social a:hover i, .footer-follow a:hover i, .footer-logo-image:hover {
-  color: #F0F0F0;
-  transform: scale(1.1);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 35px; /* Adjust this value */
-  padding-bottom: 1px; /* Add or adjust this value */
-  font-size: 1.0em;
-  color: #F0F0F0;
-}
-
-.icons {
-  color: blue;
-}
 
 .footer-hours {
   background-color: #592e3d; /* Dark background color */
   color: white; /* Text color */
-  padding: 15px; /* Padding around the box */
+  padding: 15px 60px; /* Padding around the box */
   border-radius: 8px; /* Rounded corners */
   text-align: center; /* Center align text */
   margin-top: 20px; /* Space above the box */
+  margin-left: 200px;
+  margin-right: 200px; /* Space on both sides */
+  margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
