@@ -52,7 +52,7 @@ header .container {
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between logo and nav */
   align-items: center; /* Center items vertically */
-  max-width: 1200px; /* Max width for the container */
+  max-width: auto; /* Max width for the container */
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Padding for left and right */
   height: 80px;
